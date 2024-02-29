@@ -1,0 +1,19 @@
+import styled from "styled-components"
+
+export const ContainerButton = styled.button`
+  width: 100%;
+  height: 50px;
+  background-color: blue;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+`

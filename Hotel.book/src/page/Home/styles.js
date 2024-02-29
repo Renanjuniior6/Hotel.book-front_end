@@ -1,11 +1,11 @@
 import styled from "styled-components"
 
-import HomeImg from "../../images/Imagem-Home-hotel.jpg"
+import HomeImg from "../../../images/Imagem-Home-hotel.jpg"
 
 export const Container = styled.div`
   background-image: url(${HomeImg});
   background-size: cover;
-  height: 90vh;
+  height: 95vh;
 `
 
 export const SearchBox = styled.div`
@@ -15,7 +15,7 @@ export const SearchBox = styled.div`
   align-items: center;
   background-color: #fff;
   position: absolute;
-  top: 20%;
+  top: 17%;
   left: 10%;
 `
 
@@ -27,15 +27,16 @@ export const Title = styled.h1`
 
 export const Label = styled.label`
   border: solid 1px gray;
-  display: flex;
-  flex-direction: column;
   width: 100%;
   height: 90px;
   margin-bottom: 20px;
   padding: 10px;
+  font-weight: 700;
 
   select {
-    margin-top: 10px;
+    margin-top: 5%;
     border: none;
+    display: block;
+    width: 100%;
   }
 `

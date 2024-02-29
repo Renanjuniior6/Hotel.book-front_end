@@ -1,5 +1,12 @@
+import {
+  faLocationDot,
+  faMoneyBill,
+  faBed,
+} from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React from "react"
 
+import { Button } from "../../components/Button"
 import { Container, SearchBox, Title, Label } from "./styles"
 
 function Home() {
@@ -7,9 +14,9 @@ function Home() {
     <>
       <Container>
         <SearchBox>
-          <Title>Encontre o hotel ideal para você</Title>
+          <Title>Encontre o Hotel ideal para você </Title>
           <Label>
-            Cidade
+            <FontAwesomeIcon icon={faLocationDot} /> Cidade
             <select>
               <option>Rio de Janeiro</option>
               <option>São Paulo</option>
@@ -18,7 +25,7 @@ function Home() {
             </select>
           </Label>
           <Label>
-            Valor total até
+            <FontAwesomeIcon icon={faMoneyBill} /> Valor total até
             <select>
               <option>R$ 1000,00</option>
               <option>R$ 2000,00</option>
@@ -26,13 +33,14 @@ function Home() {
             </select>
           </Label>
           <Label>
-            Quartos
+            <FontAwesomeIcon icon={faBed} /> Quartos
             <select>
               <option>1</option>
               <option>2</option>
               <option>3</option>
             </select>
           </Label>
+          <Button>Buscar Hotéis</Button>
         </SearchBox>
       </Container>
     </>
