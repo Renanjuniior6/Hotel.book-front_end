@@ -2,12 +2,24 @@ import {
   faLocationDot,
   faMoneyBill,
   faBed,
+  faArrowRight,
 } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React from "react"
 
+import sofa from "../../../images/sofa-img.png"
 import { Button } from "../../components/Button"
-import { Container, SearchBox, Title, Label } from "./styles"
+import {
+  Container,
+  SearchBox,
+  Title,
+  Label,
+  Container2,
+  BoxPetsImg,
+  BoxPets,
+  ButtonSeeHotels,
+  ButtonHowRentHotel,
+} from "./styles"
 
 function Home() {
   return (
@@ -43,6 +55,32 @@ function Home() {
           <Button>Buscar Hotéis</Button>
         </SearchBox>
       </Container>
+
+      <Container2>
+        <BoxPets>
+          <div>
+            <h1>Alugar bem, sem complicação e fiador</h1>
+            <p>
+              Selecione os imóveis do seu jeito, agende visitas online, negocie
+              sem intermédios e assine o contrato digitalmente
+            </p>
+            <ButtonSeeHotels>Ver imóveis para alugar</ButtonSeeHotels>
+            <ButtonHowRentHotel>
+              Como alugar no Hotel.Book{" "}
+              <FontAwesomeIcon
+                style={{ marginLeft: 30, height: 16 }}
+                icon={faArrowRight}
+              />
+            </ButtonHowRentHotel>
+          </div>
+          <img src={sofa} />
+        </BoxPets>
+        <BoxPetsImg>
+          <div>
+            <p>Aceita pet</p>
+          </div>
+        </BoxPetsImg>
+      </Container2>
     </>
   )
 }
