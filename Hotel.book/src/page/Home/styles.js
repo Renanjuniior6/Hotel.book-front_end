@@ -126,11 +126,31 @@ export const BoxPetsImg = styled.div`
     background-color: #fff;
     width: 400px;
     height: 250px;
+    padding: 20px;
 
-    p {
+    h1 {
       font-size: 35px;
       font-weight: 600;
-      padding: 20px;
+      margin-bottom: 17px;
+    }
+
+    p {
+      margin-bottom: 30px;
+    }
+
+    button {
+      height: 50px;
+      width: 70%;
+      background: transparent;
+      color: #000;
+      border: none;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.9;
+      }
     }
   }
 `

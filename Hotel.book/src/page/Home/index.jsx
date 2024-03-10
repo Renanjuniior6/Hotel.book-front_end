@@ -77,7 +77,18 @@ function Home() {
         </BoxPets>
         <BoxPetsImg>
           <div>
-            <p>Aceita pet</p>
+            <h1>Aceita pet</h1>
+            <p>
+              Pet também é família Imóveis para você levar toda sua família com
+              você
+            </p>
+            <button>
+              Ver imóveis para alugar{" "}
+              <FontAwesomeIcon
+                style={{ marginLeft: 30, height: 16 }}
+                icon={faArrowRight}
+              />
+            </button>
           </div>
         </BoxPetsImg>
       </Container2>
