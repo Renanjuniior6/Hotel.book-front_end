@@ -2,12 +2,13 @@ import styled from "styled-components"
 
 import HomeImg from "../../../images/Image-Home2.webp"
 import PetImg from "../../../images/img-pet-home.jpeg"
+import SunImg from "../../../images/img-sun-home.jpeg"
 
 export const Container = styled.div`
   background-image: url(${HomeImg});
   background-size: cover;
   height: 95vh;
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
 `
 
 export const SearchBox = styled.div`
@@ -47,7 +48,7 @@ export const Container2 = styled.div`
   width: 95%;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 30px;
+  margin-bottom: 5rem;
   display: flex;
 `
 
@@ -56,7 +57,7 @@ export const BoxPets = styled.div`
   width: 65%;
   padding: 20px 50px;
   display: flex;
-  gap: 20%;
+  gap: 5%;
 
   h1 {
     width: 400px;
@@ -83,7 +84,7 @@ export const BoxPets = styled.div`
 
 export const ButtonSeeHotels = styled.button`
   height: 50px;
-  width: 70%;
+  width: 283px;
   margin-bottom: 30px;
   background-color: #000;
   color: #fff;
@@ -102,7 +103,7 @@ export const ButtonSeeHotels = styled.button`
 
 export const ButtonHowRentHotel = styled.button`
   height: 50px;
-  width: 70%;
+  width: 288px;
   background: transparent;
   color: #000;
   border: none;
@@ -151,6 +152,151 @@ export const BoxPetsImg = styled.div`
       &:hover {
         opacity: 0.9;
       }
+    }
+  }
+`
+export const Container3 = styled.div`
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5rem;
+  display: flex;
+`
+export const BoxImage = styled.div`
+  background-image: url(${SunImg});
+  background-size: cover;
+  background-position: center;
+  width: 35%;
+  padding: 30px;
+
+  div {
+    background-color: #fff;
+    width: 400px;
+    height: 250px;
+    padding: 20px;
+
+    h1 {
+      font-size: 35px;
+      font-weight: 600;
+      margin-bottom: 17px;
+    }
+
+    p {
+      margin-bottom: 30px;
+    }
+
+    button {
+      height: 50px;
+      background: transparent;
+      color: #000;
+      border: none;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+`
+
+export const BoxBuyHotel = styled.div`
+  background-color: #c5c9ba;
+  width: 65%;
+  padding: 20px 50px;
+  display: flex;
+  gap: 5%;
+
+  h1 {
+    width: 527px;
+    font-size: 45px;
+    margin-bottom: 40px;
+  }
+
+  p {
+    width: 450px;
+    margin-bottom: 124px;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  img {
+    margin-top: 6%;
+    width: 450px;
+    height: 550px;
+  }
+`
+
+export const Container4 = styled.div`
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5rem;
+  display: flex;
+
+  .Box1 {
+    width: 60%;
+    padding-top: 8%;
+    height: 600px;
+    background-color: #3957bd;
+
+    hr {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    p {
+      width: 689px;
+      font-size: 57px;
+      font-weight: 800;
+      color: #fff;
+      margin: 41px 70px;
+    }
+  }
+
+  .Box2 {
+    width: 40%;
+    height: 600px;
+    background-color: #fbf5e7;
+    padding: 25px;
+
+    p {
+      font-size: 46px;
+      font-weight: 700;
+      margin-bottom: 44%;
+    }
+
+    button {
+      height: 50px;
+      width: 150px;
+      background: transparent;
+      color: #000;
+      border: 1px solid #000;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      padding: 10px;
+
+      &:hover {
+        background-color: #000;
+        color: #fff;
+      }
+    }
+
+    img {
+      width: 150px;
+      height: 150px;
+      margin-left: 100px;
+      position: relative;
+      top: 40px;
     }
   }
 `
