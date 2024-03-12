@@ -3,6 +3,7 @@ import {
   faMoneyBill,
   faBed,
   faArrowRight,
+  faBoltLightning,
 } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React from "react"
@@ -143,15 +144,25 @@ function Home() {
           <hr />
         </div>
         <div className="Box2">
-          <p>Fechamos um contrato de aluguel a cada 4 minutos</p>
+          <div>
+            <p>Fechamos um contrato de aluguel a cada 4 minutos</p>
 
-          <button>
-            Saiba Mais{" "}
             <FontAwesomeIcon
-              style={{ marginLeft: 10, height: 16 }}
-              icon={faArrowRight}
+              style={{ height: 120, marginLeft: 40 }}
+              icon={faBoltLightning}
             />
-          </button>
+          </div>
+
+          <div className="LearnMore">
+            <button>
+              Saiba Mais{" "}
+              <FontAwesomeIcon
+                style={{ marginLeft: 10, height: 16 }}
+                icon={faArrowRight}
+              />
+            </button>
+            <img src={execWoman} />
+          </div>
         </div>
       </Container4>
     </>

@@ -41,6 +41,7 @@ export const Label = styled.label`
     border: none;
     display: block;
     width: 100%;
+    font-size: 1rem;
   }
 `
 export const Container2 = styled.div`
@@ -68,6 +69,7 @@ export const BoxPets = styled.div`
   p {
     width: 400px;
     margin-bottom: 100px;
+    font-size: 1.1rem;
   }
 
   div {
@@ -85,6 +87,7 @@ export const BoxPets = styled.div`
 export const ButtonSeeHotels = styled.button`
   height: 50px;
   width: 283px;
+  font-size: 1rem;
   margin-bottom: 30px;
   background-color: #000;
   color: #fff;
@@ -112,7 +115,7 @@ export const ButtonHowRentHotel = styled.button`
   cursor: pointer;
 
   &:hover {
-    opacity: 0.9;
+    color: #3957bd;
   }
 `
 
@@ -137,6 +140,7 @@ export const BoxPetsImg = styled.div`
 
     p {
       margin-bottom: 30px;
+      font-size: 1.1rem;
     }
 
     button {
@@ -150,7 +154,7 @@ export const BoxPetsImg = styled.div`
       cursor: pointer;
 
       &:hover {
-        opacity: 0.9;
+        color: #3957bd;
       }
     }
   }
@@ -184,6 +188,7 @@ export const BoxImage = styled.div`
 
     p {
       margin-bottom: 30px;
+      font-size: 1.1rem;
     }
 
     button {
@@ -196,7 +201,7 @@ export const BoxImage = styled.div`
       cursor: pointer;
 
       &:hover {
-        opacity: 0.9;
+        color: #3957bd;
       }
     }
   }
@@ -218,6 +223,7 @@ export const BoxBuyHotel = styled.div`
   p {
     width: 450px;
     margin-bottom: 124px;
+    font-size: 1.1rem;
   }
 
   div {
@@ -242,8 +248,7 @@ export const Container4 = styled.div`
 
   .Box1 {
     width: 60%;
-    padding-top: 8%;
-    height: 600px;
+    padding-top: 7%;
     background-color: #3957bd;
 
     hr {
@@ -263,14 +268,14 @@ export const Container4 = styled.div`
 
   .Box2 {
     width: 40%;
-    height: 600px;
+
     background-color: #fbf5e7;
     padding: 25px;
 
     p {
       font-size: 46px;
       font-weight: 700;
-      margin-bottom: 44%;
+      margin-bottom: 5%;
     }
 
     button {
@@ -285,6 +290,8 @@ export const Container4 = styled.div`
       text-align: center;
       padding: 10px;
 
+      margin-left: 3%;
+
       &:hover {
         background-color: #000;
         color: #fff;
@@ -292,11 +299,23 @@ export const Container4 = styled.div`
     }
 
     img {
-      width: 150px;
-      height: 150px;
-      margin-left: 100px;
-      position: relative;
-      top: 40px;
+      width: 200px;
+      height: 260px;
+      border: 15px solid #b9d1ff;
+      margin-right: 6%;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .LearnMore {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: end;
     }
   }
 `

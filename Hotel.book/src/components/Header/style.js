@@ -33,7 +33,8 @@ export const ContainerLeft = styled.div`
 export const Links = styled.a`
   margin-top: 4%;
   cursor: pointer;
-  font-size: 19px;
+  font-size: 20px;
+  font-weight: 500;
   border-bottom: ${(props) => (props.isActive ? "3px solid #052659" : "none")};
   &:hover {
     color: #052659;
