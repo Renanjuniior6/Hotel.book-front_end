@@ -7,12 +7,12 @@ import SunImg from "../../../images/img-sun-home.jpeg"
 export const Container = styled.div`
   background-image: url(${HomeImg});
   background-size: cover;
-  height: 95vh;
+  height: 98vh;
   margin-bottom: 5rem;
 `
 
 export const SearchBox = styled.div`
-  padding: 30px 20px;
+  padding: 1.875rem 1.25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,16 +24,16 @@ export const SearchBox = styled.div`
 
 export const Title = styled.h1`
   text-align: center;
-  width: 400px;
+  width: 25rem;
   margin-bottom: 10%;
 `
 
 export const Label = styled.label`
   border: solid 1px gray;
   width: 100%;
-  height: 90px;
-  margin-bottom: 20px;
-  padding: 10px;
+  height: 5.625rem;
+  margin-bottom: 1.25rem;
+  padding: 0.625rem;
   font-weight: 700;
 
   select {
@@ -56,19 +56,17 @@ export const Container2 = styled.div`
 export const BoxPets = styled.div`
   background-color: #d5bfd7;
   width: 65%;
-  padding: 20px 50px;
+  padding: 1.25rem 3.125rem;
   display: flex;
-  gap: 5%;
-
   h1 {
-    width: 400px;
-    font-size: 45px;
-    margin-bottom: 40px;
+    width: 25rem;
+    font-size: 2.8125rem;
+    margin-bottom: 2.5rem;
   }
 
   p {
-    width: 400px;
-    margin-bottom: 100px;
+    width: 25rem;
+    margin-bottom: 6.25rem;
     font-size: 1.1rem;
   }
 
@@ -79,21 +77,23 @@ export const BoxPets = styled.div`
 
   img {
     margin-top: 6%;
-    width: 500px;
-    height: 500px;
+    width: 31.25rem;
+    height: 31.25rem;
   }
 `
 
-export const ButtonSeeHotels = styled.button`
-  height: 50px;
-  width: 283px;
+export const ButtonSeeHotels = styled.a`
+  height: 3.125rem;
+  width: 17.6875rem;
   font-size: 1rem;
-  margin-bottom: 30px;
+  margin-bottom: 1.875rem;
   background-color: #000;
   color: #fff;
   border: none;
   font-weight: 600;
   cursor: pointer;
+  text-align: center;
+  padding-top: 0.8rem;
 
   &:hover {
     opacity: 0.9;
@@ -105,12 +105,12 @@ export const ButtonSeeHotels = styled.button`
 `
 
 export const ButtonHowRentHotel = styled.button`
-  height: 50px;
-  width: 288px;
+  height: 3.125rem;
+  width: 18rem;
   background: transparent;
   color: #000;
   border: none;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
 
@@ -124,32 +124,32 @@ export const BoxPetsImg = styled.div`
   background-size: cover;
   background-position: center;
   width: 35%;
-  padding: 30px;
+  padding: 1.875rem;
 
   div {
     background-color: #fff;
-    width: 400px;
-    height: 250px;
-    padding: 20px;
+    width: 25rem;
+    height: 15.625rem;
+    padding: 1.25rem;
 
     h1 {
-      font-size: 35px;
+      font-size: 2.1875rem;
       font-weight: 600;
-      margin-bottom: 17px;
+      margin-bottom: 1.0625rem;
     }
 
     p {
-      margin-bottom: 30px;
+      margin-bottom: 1.875rem;
       font-size: 1.1rem;
     }
 
     button {
-      height: 50px;
+      height: 3.125rem;
       width: 70%;
       background: transparent;
       color: #000;
       border: none;
-      font-size: 16px;
+      font-size: 1rem;
       font-weight: 600;
       cursor: pointer;
 
@@ -172,31 +172,31 @@ export const BoxImage = styled.div`
   background-size: cover;
   background-position: center;
   width: 35%;
-  padding: 30px;
+  padding: 1.875rem;
 
   div {
     background-color: #fff;
-    width: 400px;
-    height: 250px;
-    padding: 20px;
+    width: 25rem;
+    height: 15.625rem;
+    padding: 1.25rem;
 
     h1 {
-      font-size: 35px;
+      font-size: 2.1875rem;
       font-weight: 600;
-      margin-bottom: 17px;
+      margin-bottom: 1.0625rem;
     }
 
     p {
-      margin-bottom: 30px;
+      margin-bottom: 1.875rem;
       font-size: 1.1rem;
     }
 
     button {
-      height: 50px;
+      height: 3.125rem;
       background: transparent;
       color: #000;
       border: none;
-      font-size: 16px;
+      font-size: 1rem;
       font-weight: 600;
       cursor: pointer;
 
@@ -210,19 +210,19 @@ export const BoxImage = styled.div`
 export const BoxBuyHotel = styled.div`
   background-color: #c5c9ba;
   width: 65%;
-  padding: 20px 50px;
+  padding: 1.25rem 3.125rem;
   display: flex;
   gap: 5%;
 
   h1 {
-    width: 527px;
-    font-size: 45px;
-    margin-bottom: 40px;
+    width: 32.9375rem;
+    font-size: 2.8125rem;
+    margin-bottom: 2.5rem;
   }
 
   p {
-    width: 450px;
-    margin-bottom: 124px;
+    width: 28.125rem;
+    margin-bottom: 7.75rem;
     font-size: 1.1rem;
   }
 
@@ -233,8 +233,8 @@ export const BoxBuyHotel = styled.div`
 
   img {
     margin-top: 6%;
-    width: 450px;
-    height: 550px;
+    width: 28.125rem;
+    height: 34.375rem;
   }
 `
 
@@ -258,11 +258,11 @@ export const Container4 = styled.div`
     }
 
     p {
-      width: 689px;
-      font-size: 57px;
+      width: 43.0625rem;
+      font-size: 3.5625rem;
       font-weight: 800;
       color: #fff;
-      margin: 41px 70px;
+      margin: 2.5625rem 4.375rem;
     }
   }
 
@@ -270,25 +270,25 @@ export const Container4 = styled.div`
     width: 40%;
 
     background-color: #fbf5e7;
-    padding: 25px;
+    padding: 1.5625rem;
 
     p {
-      font-size: 46px;
+      font-size: 2.875rem;
       font-weight: 700;
       margin-bottom: 5%;
     }
 
     button {
-      height: 50px;
-      width: 150px;
+      height: 3.125rem;
+      width: 9.375rem;
       background: transparent;
       color: #000;
       border: 1px solid #000;
-      font-size: 16px;
+      font-size: 1rem;
       font-weight: 600;
       cursor: pointer;
       text-align: center;
-      padding: 10px;
+      padding: 0.625rem;
 
       margin-left: 3%;
 
@@ -299,9 +299,9 @@ export const Container4 = styled.div`
     }
 
     img {
-      width: 200px;
-      height: 260px;
-      border: 15px solid #b9d1ff;
+      width: 12.5rem;
+      height: 16.25rem;
+      border: 0.9375rem solid #b9d1ff;
       margin-right: 6%;
     }
 

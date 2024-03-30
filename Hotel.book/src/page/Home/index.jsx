@@ -7,6 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React from "react"
+import { useNavigate } from "react-router"
 
 import execWoman from "../../../images/img-executive-woman.webp"
 import woman from "../../../images/img-woman-home.webp"
@@ -29,6 +30,8 @@ import {
 } from "./styles"
 
 function Home() {
+  const navigate = useNavigate()
+
   return (
     <>
       <Container>
@@ -71,7 +74,9 @@ function Home() {
               Selecione os imóveis do seu jeito, agende visitas online, negocie
               sem intermédios e assine o contrato digitalmente
             </p>
-            <ButtonSeeHotels>Ver imóveis para alugar</ButtonSeeHotels>
+            <ButtonSeeHotels onClick={() => navigate("/hotels")}>
+              Ver imóveis para alugar
+            </ButtonSeeHotels>
             <ButtonHowRentHotel>
               Como alugar no Hotel.Book{" "}
               <FontAwesomeIcon
