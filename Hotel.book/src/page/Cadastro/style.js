@@ -7,6 +7,19 @@ export const Container = styled.div`
   display:flex;
   justify-content:center:
   align-items:center;
+
+  b {
+    color: #052659;
+    font-size: 35px;
+    font-weight: 800;
+  }
+`
+
+export const Title = styled.a`
+  font-size: 26px;
+  margin-right: 70px;
+  margin-top: 1%;
+  cursor: pointer;
 `
 
 export const RegisterLogin = styled.img``
@@ -25,6 +38,6 @@ export const Label = styled.p``
 
 export const Input = styled.input``
 
-//export const SingLink = styled.link``
+//export const SingLink = styled.a``
 
 export const ErrorMessage = styled.p``
