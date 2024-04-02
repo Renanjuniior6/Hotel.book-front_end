@@ -5,7 +5,7 @@ import { useNavigate, useLocation } from "react-router"
 
 import { Container, Title, ContainerLeft, ContainerRight, Links } from "./style"
 
-export function Header() {
+function Header() {
   const navigate = useNavigate()
   const { pathname } = useLocation()
 
@@ -44,3 +44,5 @@ export function Header() {
     </Container>
   )
 }
+
+export default Header

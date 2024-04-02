@@ -5,7 +5,7 @@ import Header from "./components/Header"
 import Router from "./routes/routes.jsx"
 import GlobalStyle from "./style/globalStyle"
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
       <Header />

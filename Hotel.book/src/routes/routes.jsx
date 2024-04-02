@@ -1,11 +1,7 @@
 import React from "react"
-
-import { Switch, Route, BrowserRouter as Router } from "react-router-dom"
 import Home from "../page/Home"
 import { Route, Routes } from "react-router-dom"
-
-import Home from "../Page/Home"
-import Hotels from "../Page/Hotels"
+import Hotels from "../page/Hotels"
 
 function Router() {
   return (

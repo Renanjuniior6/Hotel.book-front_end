@@ -6,6 +6,7 @@ export const Container = styled.div`
   justify-content: space-between;
   position: fixed;
   background: #fff;
+  z-index: 100;
 
   b {
     color: #052659;
@@ -14,10 +15,11 @@ export const Container = styled.div`
   }
 `
 
-export const Title = styled.p`
+export const Title = styled.a`
   font-size: 26px;
   margin-right: 70px;
   margin-top: 1%;
+  cursor: pointer;
 `
 
 export const ContainerLeft = styled.div`
@@ -31,8 +33,9 @@ export const ContainerLeft = styled.div`
 export const Links = styled.a`
   margin-top: 4%;
   cursor: pointer;
-  font-size: 19px;
-  border-bottom: ${(props) => (props.isActive ? "1px solid #052659" : "none")};
+  font-size: 20px;
+  font-weight: 500;
+  border-bottom: ${(props) => (props.isActive ? "3px solid #052659" : "none")};
   &:hover {
     color: #052659;
   }
