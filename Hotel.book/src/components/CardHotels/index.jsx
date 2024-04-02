@@ -2,13 +2,22 @@ import { faHeart, faLocationDot } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import PropTypes from "prop-types"
 import React from "react"
+import { useNavigate } from "react-router-dom"
 
 import { formatCurrency } from "../../utils/formatCurrency"
 import { Container, BoxUp, BoxDown, Paragraph, Info } from "./styles"
 
 function CardHotels({ hotel }) {
+  const navigate = useNavigate()
+
+  function getId(id) {
+    if (hotel) {
+      navigate(`/detailhotel/${id}`)
+    }
+  }
+
   return (
-    <Container>
+    <Container onClick={() => getId(hotel.id)}>
       <img src={hotel.url} />
       <BoxUp>
         <Paragraph>
