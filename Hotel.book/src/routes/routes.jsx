@@ -5,6 +5,7 @@ import Cadastro from "../page/Cadastro"
 import DetailHotel from "../page/DetailHotel"
 import Home from "../page/Home"
 import Hotels from "../page/Hotels"
+import Login from "../page/Login"
 
 function Router() {
   return (
@@ -12,6 +13,7 @@ function Router() {
       <Route exact element={<Home />} path="/"></Route>
       <Route element={<Hotels />} path="/hotels"></Route>
       <Route element={<DetailHotel />} path="/detailhotel/:id"></Route>
+      <Route element={<Login />} path="/login"></Route>
       <Route element={<Cadastro />} path="/cadastro"></Route>
     </Routes>
   )
