@@ -37,9 +37,9 @@ export const ContainerItens = styled.div`
   }
 
   h1 {
-    font-weight: 500;
-    font-size: 29px;
-    line-height: 28px;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 1.25;
     color:#007cc2;
     margin-top: 10px;
     margin-bottom: 24px;

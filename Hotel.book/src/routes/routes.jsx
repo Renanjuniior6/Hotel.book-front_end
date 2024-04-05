@@ -11,9 +11,9 @@ function Router() {
   return (
     <Routes>
       <Route exact element={<Home />} path="/"></Route>
+      <Route element={<Login />} path="/login"></Route>
       <Route element={<Hotels />} path="/hotels"></Route>
       <Route element={<DetailHotel />} path="/detailhotel/:id"></Route>
-      <Route element={<Login />} path="/login"></Route>
       <Route element={<Cadastro />} path="/cadastro"></Route>
     </Routes>
   )
