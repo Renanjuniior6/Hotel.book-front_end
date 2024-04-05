@@ -145,7 +145,7 @@ function Home() {
       <Container4>
         <div className="Box1">
           <hr />
-          <p>No Hotel.Book seu você fecha um negócio rápido.</p>
+          <p>No Hotel.Book você fecha um negócio rápido.</p>
           <hr />
         </div>
         <div className="Box2">

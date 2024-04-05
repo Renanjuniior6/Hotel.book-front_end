@@ -20,6 +20,7 @@ export const SearchBox = styled.div`
   position: absolute;
   top: 17%;
   left: 10%;
+  height: 36.0625rem;
 `
 
 export const Title = styled.h1`

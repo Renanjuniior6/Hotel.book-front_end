@@ -7,6 +7,7 @@ export const Container = styled.div`
   position: fixed;
   background: #fff;
   z-index: 100;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
   b {
     color: #052659;
