@@ -48,6 +48,11 @@ export const ContainerRight = styled.div`
   align-items: center;
   margin-right: 4%;
 
+  .icon {
+    display: flex;
+    align-items: center;
+  }
+
   button {
     background: transparent;
     cursor: pointer;

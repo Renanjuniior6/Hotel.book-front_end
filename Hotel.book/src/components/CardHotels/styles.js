@@ -37,4 +37,10 @@ export const BoxDown = styled.div`
 export const Info = styled.div`
   display: flex;
   gap: 0.4rem;
+
+  .icon {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
 `

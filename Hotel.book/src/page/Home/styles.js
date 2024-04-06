@@ -45,6 +45,12 @@ export const Label = styled.label`
     font-size: 1rem;
   }
 `
+export const Icon = styled.div`
+  display: flex;
+  align-items: start;
+  gap: 5px;
+`
+
 export const Container2 = styled.div`
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   width: 95%;
@@ -107,13 +113,16 @@ export const ButtonSeeHotels = styled.a`
 
 export const ButtonHowRentHotel = styled.button`
   height: 3.125rem;
-  width: 18rem;
+  width: 17.6875rem;
   background: transparent;
   color: #000;
   border: none;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     color: #3957bd;

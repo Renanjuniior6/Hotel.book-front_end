@@ -1,5 +1,4 @@
-import { faUser, faHeart } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { Heart, User } from "@phosphor-icons/react"
 import React from "react"
 import { useNavigate, useLocation } from "react-router"
 
@@ -29,16 +28,20 @@ export function Header() {
 
       <ContainerRight>
         <a>
-          {" "}
-          <FontAwesomeIcon style={{ marginRight: 10 }} icon={faHeart} />
-          Favoritos
+          <div className="icon">
+            {" "}
+            <Heart size={20} weight="fill" style={{ marginRight: 10 }} />
+            Favoritos
+          </div>
         </a>
         <a>Sobre</a>
 
         <button>
-          {" "}
-          <FontAwesomeIcon style={{ marginRight: 10 }} icon={faUser} />
-          Entrar
+          <div className="icon">
+            {" "}
+            <User size={20} style={{ marginRight: 10 }} />
+            Entrar
+          </div>
         </button>
       </ContainerRight>
     </Container>

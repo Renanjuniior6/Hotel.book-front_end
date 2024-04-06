@@ -1,11 +1,11 @@
 import React from "react"
 import { Route, Routes } from "react-router-dom"
-import Cadastro from "../page/Cadastro"
 
-import DetailHotel from "../page/DetailHotel"
-import Home from "../page/Home"
-import Hotels from "../page/Hotels"
-import Login from "../page/Login"
+import Cadastro from "../Page/Cadastro"
+import DetailHotel from "../Page/DetailHotel"
+import Home from "../Page/Home"
+import Hotels from "../Page/Hotels"
+import Login from "../Page/Login"
 
 function Router() {
   return (

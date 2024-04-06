@@ -1,11 +1,10 @@
 import {
-  faLocationDot,
-  faMoneyBill,
-  faBed,
-  faArrowRight,
-  faBoltLightning,
-} from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+  MapPin,
+  Money,
+  Bed,
+  ArrowRight,
+  Lightning,
+} from "@phosphor-icons/react"
 import React from "react"
 import { useNavigate } from "react-router"
 
@@ -27,6 +26,7 @@ import {
   BoxBuyHotel,
   Container3,
   Container4,
+  Icon,
 } from "./styles"
 
 function Home() {
@@ -38,7 +38,9 @@ function Home() {
         <SearchBox>
           <Title>Encontre o Hotel ideal para você </Title>
           <Label>
-            <FontAwesomeIcon icon={faLocationDot} /> Cidade
+            <Icon>
+              <MapPin size={20} /> Cidade
+            </Icon>
             <select>
               <option>Rio de Janeiro</option>
               <option>São Paulo</option>
@@ -47,7 +49,9 @@ function Home() {
             </select>
           </Label>
           <Label>
-            <FontAwesomeIcon icon={faMoneyBill} /> Valor total até
+            <Icon>
+              <Money size={20} /> Valor total até
+            </Icon>
             <select>
               <option>R$ 1000,00</option>
               <option>R$ 2000,00</option>
@@ -55,7 +59,9 @@ function Home() {
             </select>
           </Label>
           <Label>
-            <FontAwesomeIcon icon={faBed} /> Quartos
+            <Icon>
+              <Bed size={20} /> Quartos
+            </Icon>
             <select>
               <option>1</option>
               <option>2</option>
@@ -79,10 +85,7 @@ function Home() {
             </ButtonSeeHotels>
             <ButtonHowRentHotel>
               Como alugar no Hotel.Book{" "}
-              <FontAwesomeIcon
-                style={{ marginLeft: 30, height: 16 }}
-                icon={faArrowRight}
-              />
+              <ArrowRight size={20} style={{ marginLeft: 10 }} />
             </ButtonHowRentHotel>
           </div>
           <img src={sofa} />
@@ -94,13 +97,10 @@ function Home() {
               Pet também é família Imóveis para você levar toda sua família com
               você
             </p>
-            <button>
+            <ButtonHowRentHotel>
               Ver imóveis para alugar{" "}
-              <FontAwesomeIcon
-                style={{ marginLeft: 30, height: 16 }}
-                icon={faArrowRight}
-              />
-            </button>
+              <ArrowRight size={20} style={{ marginLeft: 30 }} />
+            </ButtonHowRentHotel>
           </div>
         </BoxPetsImg>
       </Container2>
@@ -112,13 +112,10 @@ function Home() {
             <p>
               Imóveis com luz natural e que recebem aquele sol gostoso de manhã
             </p>
-            <button>
+            <ButtonHowRentHotel>
               Ver imóveis para comprar{" "}
-              <FontAwesomeIcon
-                style={{ marginLeft: 30, height: 16 }}
-                icon={faArrowRight}
-              />
-            </button>
+              <ArrowRight size={20} style={{ marginLeft: 30 }} />
+            </ButtonHowRentHotel>
           </div>
         </BoxImage>
         <BoxBuyHotel>
@@ -132,10 +129,7 @@ function Home() {
             <ButtonSeeHotels>Ver imóveis para comprar</ButtonSeeHotels>
             <ButtonHowRentHotel>
               Como comprar no Hotel.Book{" "}
-              <FontAwesomeIcon
-                style={{ marginLeft: 30, height: 16 }}
-                icon={faArrowRight}
-              />
+              <ArrowRight size={20} style={{ marginLeft: 18 }} />
             </ButtonHowRentHotel>
           </div>
           <img src={woman} />
@@ -152,20 +146,13 @@ function Home() {
           <div>
             <p>Fechamos um contrato de aluguel a cada 4 minutos</p>
 
-            <FontAwesomeIcon
-              style={{ height: 120, marginLeft: 40 }}
-              icon={faBoltLightning}
-            />
+            <Lightning size={120} weight="fill" style={{ marginLeft: 40 }} />
           </div>
 
           <div className="LearnMore">
-            <button>
-              Saiba Mais{" "}
-              <FontAwesomeIcon
-                style={{ marginLeft: 10, height: 16 }}
-                icon={faArrowRight}
-              />
-            </button>
+            <ButtonHowRentHotel>
+              Saiba Mais <ArrowRight size={20} style={{ marginLeft: 10 }} />
+            </ButtonHowRentHotel>
             <img src={execWoman} />
           </div>
         </div>
