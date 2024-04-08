@@ -7,6 +7,7 @@ export const Container = styled.div`
   position: fixed;
   background: #fff;
   z-index: 100;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
   b {
     color: #052659;
@@ -46,6 +47,11 @@ export const ContainerRight = styled.div`
   gap: 45px;
   align-items: center;
   margin-right: 4%;
+
+  .icon {
+    display: flex;
+    align-items: center;
+  }
 
   button {
     background: transparent;

@@ -1,5 +1,4 @@
-import { faHeart, faLocationDot } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { HeartStraight, MapPin } from "@phosphor-icons/react"
 import PropTypes from "prop-types"
 import React from "react"
 import { useNavigate } from "react-router-dom"
@@ -24,19 +23,23 @@ function CardHotels({ hotel }) {
           <p>{hotel.name}</p>
           <b>{formatCurrency(hotel.price)}</b>
         </Paragraph>
-        <FontAwesomeIcon
-          icon={faHeart}
-          style={{ height: "1.25rem", marginRight: "0.3125rem" }}
-        />
+        <HeartStraight size={28} style={{ marginRight: 10 }} />
       </BoxUp>
       <BoxDown>
         <Info>
           <b>{`${hotel.squareMeters}m²`}</b>
           <b>-</b>
-          <b>{hotel.rooms} quartos</b>
+          <b>
+            {" "}
+            {hotel.rooms > 1
+              ? `${hotel.rooms} quartos`
+              : `${hotel.rooms} quarto`}
+          </b>
           <b>-</b>
           <b>
-            {hotel.city.name} <FontAwesomeIcon icon={faLocationDot} />
+            <div className="icon">
+              {hotel.city.name} <MapPin size={20} />
+            </div>
           </b>
         </Info>
       </BoxDown>
