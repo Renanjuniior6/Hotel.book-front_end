@@ -1,23 +1,21 @@
-import { yupResolver } from "@hookform/resolvers/yup"
 import React from "react"
 import { useForm } from "react-hook-form"
-import { Link } from "react-router-dom"
-import { toast } from "react-toastify"
-import * as Yup from "yup"
 
+import { Container, ContainerItens, Input, Label, ErrorMessage, Title, SingLink } from "./style"
+import * as Yup from "yup"
+import  {yupResolver}  from "@hookform/resolvers/yup"
+import { toast } from "react-toastify"
+
+import { Link } from "react-router-dom"
 import api from "../../services/api"
-import {
-  Container,
-  ContainerItens,
-  Input,
-  Label,
-  ErrorMessage,
-  Title,
-  SingLink,
-} from "./style"
 
 function Cadastro() {
   const schema = Yup.object().shape({
+    name: Yup.string().required("Seu nome é obrigatorio"),
+    email: Yup.string().required("O seu email é obrigatorio"),
+    password: Yup.string().required("A senha é obrigatoria").min(6, "A senha deve ter no minimo 6 caracteristicas"),
+    confirmPassoword: Yup.string().required("A senha é obrigatoria").oneOf([Yup.ref("password")]
+      , "As senhas devem ser parecida"),
     name: Yup.string("Coloque seu nome").required("Seu nome é obrigatorio"),
     email: Yup.string("Coloque seu email").required(
       "O seu email é obrigatorio",
@@ -71,7 +69,7 @@ function Cadastro() {
           <b>H</b>otel.Book
         </Title>
 
-        <h1>Cadrastre-se</h1>
+        <h1>Log in or create an account</h1>
 
         <form noValidate onSubmit={handleSubmit(onSubmit)}>
           <Label error={errors.name?.message}>Nome</Label>
