@@ -1,26 +1,13 @@
-import { yupResolver } from "@hookform/resolvers/yup"
 import React from "react"
 import { useForm } from "react-hook-form"
 
 import { Container, ContainerItens, Input, Label, ErrorMessage, Title, SingLink } from "./style"
 import * as Yup from "yup"
-import { yupResolver } from "@hookform/resolvers/yup"
+import  {yupResolver}  from "@hookform/resolvers/yup"
 import { toast } from "react-toastify"
 
 import { Link } from "react-router-dom"
-import { toast } from "react-toastify"
-import * as Yup from "yup"
-
 import api from "../../services/api"
-import {
-  Container,
-  ContainerItens,
-  Input,
-  Label,
-  ErrorMessage,
-  Title,
-  SingLink,
-} from "./style"
 
 function Cadastro() {
   const schema = Yup.object().shape({
