@@ -1,6 +1,6 @@
 import { HeartStraight, MapPin } from "@phosphor-icons/react"
 import PropTypes from "prop-types"
-import React from "react"
+import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 import { formatCurrency } from "../../utils/formatCurrency"
@@ -8,6 +8,7 @@ import { Container, BoxUp, BoxDown, Paragraph, Info } from "./styles"
 
 function CardHotels({ hotel }) {
   const navigate = useNavigate()
+  const [value, setValue] = useState("light")
 
   function getId(id) {
     if (hotel) {
@@ -15,15 +16,28 @@ function CardHotels({ hotel }) {
     }
   }
 
+  function isActive(fill) {
+    if (fill === value) {
+      setValue("light")
+    } else {
+      setValue(fill)
+    }
+  }
+
   return (
-    <Container onClick={() => getId(hotel.id)}>
-      <img src={hotel.url} />
+    <Container>
+      <img src={hotel.url} onClick={() => getId(hotel.id)} />
       <BoxUp>
         <Paragraph>
           <p>{hotel.name}</p>
           <b>{formatCurrency(hotel.price)}</b>
         </Paragraph>
-        <HeartStraight size={28} style={{ marginRight: 10 }} />
+        <HeartStraight
+          size={28}
+          style={{ marginRight: 10 }}
+          onClick={() => isActive("fill")}
+          weight={value}
+        />
       </BoxUp>
       <BoxDown>
         <Info>
@@ -38,7 +52,7 @@ function CardHotels({ hotel }) {
           <b>-</b>
           <b>
             <div className="icon">
-              {hotel.city.name} <MapPin size={20} />
+              {hotel.city.name} <MapPin weight="fill" size={20} />
             </div>
           </b>
         </Info>
