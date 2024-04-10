@@ -3,10 +3,13 @@ import PropTypes from "prop-types"
 import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
+import { useFavorite } from "../../hooks/FavoriteContext"
 import { formatCurrency } from "../../utils/formatCurrency"
 import { Container, BoxUp, BoxDown, Paragraph, Info } from "./styles"
 
 function CardHotels({ hotel }) {
+  const { putInFavorites } = useFavorite()
+
   const navigate = useNavigate()
   const [value, setValue] = useState("light")
 
@@ -35,7 +38,10 @@ function CardHotels({ hotel }) {
         <HeartStraight
           size={28}
           style={{ marginRight: 10 }}
-          onClick={() => isActive("fill")}
+          onClick={() => {
+            isActive("fill")
+            putInFavorites(hotel)
+          }}
           weight={value}
         />
       </BoxUp>
