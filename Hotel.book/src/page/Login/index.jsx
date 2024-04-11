@@ -1,11 +1,10 @@
 import React from "react"
 import * as Yup from 'yup'
-import { Container, ContainerItens, ErrorMessage, Input, Label, SingLink } from "./style"
+import { Button, Container, ContainerItens, ErrorMessage, Input, Label, SingLink, Title } from "./style"
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { toast } from 'react-toastify'
 import api from '../../services/api'
-import { Link } from 'react-router-dom'
 
 function Login() {
 
@@ -37,6 +36,10 @@ function Login() {
   return (
     <Container>
       <ContainerItens>
+      <Title>
+          <b>H</b>otel.Book
+        </Title>
+
         <h1>Welcome !</h1>
 
       <form noValidate onSubmit={handleSubmit(onSubmit)}>
@@ -48,9 +51,10 @@ function Login() {
         <Input typer="password" {...register("password")} error={errors.password?.message}/>
         <ErrorMessage>{errors.password?.email}</ErrorMessage>
 
+        <Button>Entrar</Button>
       </form>
 
-        <SingLink>Não tem conta? <Link style={{ color: '#FFFf' }} to="/cadastro">Faça sua conta</Link> </SingLink>
+        <SingLink>Não tem conta? <a>Sing up</a> </SingLink>
         </ContainerItens>
     </Container>
   )
