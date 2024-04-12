@@ -33,7 +33,7 @@ import {
 
 function DetailHotel() {
   const [hotel, setHotel] = useState([])
-  const [value, setValue] = useState()
+  const [value, setValue] = useState("light")
   const { id } = useParams()
 
   const hotelId = parseInt(id)
@@ -51,9 +51,11 @@ function DetailHotel() {
   }, [hotelId])
 
   function isActive(fill) {
-    const value = fill
-
-    setValue(value)
+    if (fill === value) {
+      setValue("light")
+    } else {
+      setValue(fill)
+    }
   }
 
   return (
@@ -78,13 +80,8 @@ function DetailHotel() {
                 </Total>
               </DetailsGroup>
               <ImageBox>
-                <div>
-                  <HeartStraight
-                    weight={value}
-                    onClick={() => isActive("fill")}
-                    className="Heart"
-                    size={32}
-                  />
+                <div onClick={() => isActive("fill")}>
+                  <HeartStraight weight={value} className="Heart" size={32} />
                 </div>
                 <img src={item.url} />
               </ImageBox>

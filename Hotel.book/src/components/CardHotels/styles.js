@@ -3,7 +3,6 @@ import styled from "styled-components"
 export const Container = styled.div`
   width: 21.25rem;
   margin-bottom: 1.875rem;
-  cursor: pointer;
   background-color: #fff;
 
   &:hover {
