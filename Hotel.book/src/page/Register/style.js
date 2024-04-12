@@ -40,7 +40,7 @@ export const ContainerItens = styled.div`
     font-weight: 700;
     font-size: 2rem;
     line-height: 1.25;
-    color:#007cc2;
+    color: #007cc2;
     font-weight: 500;
     font-size: 29px;
     line-height: 28px;

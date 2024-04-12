@@ -16,7 +16,7 @@ import {
   SingLink,
 } from "./style"
 
-function Cadastro() {
+function Register() {
   const schema = Yup.object().shape({
     name: Yup.string().required("Seu nome é obrigatorio"),
     email: Yup.string().required("O seu email é obrigatorio"),
@@ -116,4 +116,4 @@ function Cadastro() {
   )
 }
 
-export default Cadastro
+export default Register
