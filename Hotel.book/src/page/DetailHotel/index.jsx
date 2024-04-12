@@ -11,8 +11,10 @@ import {
 } from "@phosphor-icons/react"
 import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import { toast } from "react-toastify"
 
 import { Button } from "../../components/Button"
+import { useFavorite } from "../../hooks/FavoriteContext"
 import api from "../../services/api"
 import { formatCurrency } from "../../utils/formatCurrency"
 import {
@@ -33,33 +35,53 @@ import {
 
 function DetailHotel() {
   const [hotel, setHotel] = useState([])
-  const [value, setValue] = useState("light")
+  const [value, setValue] = useState()
   const { id } = useParams()
+  const { putInFavorites } = useFavorite()
 
   const hotelId = parseInt(id)
 
+  toast.clearWaitingQueue()
+
   useEffect(() => {
     async function loadHotels() {
-      const { data } = await api.get("hotels")
+      const { data } = await toast.promise(api.get("hotels"), {
+        pending: "Carregando",
+        error: "Erro ao carregar",
+      })
 
-      const value = data.filter((item) => item.id === hotelId)
+      const valor = data.filter((item) => item.id === hotelId)
 
-      setHotel(value)
+      setHotel(valor)
     }
 
     loadHotels()
-  }, [hotelId])
+  }, [])
 
   function isActive(fill) {
     if (fill === value) {
-      setValue("light")
+      setValue("regular")
     } else {
       setValue(fill)
     }
   }
 
+  setTimeout(() => {
+    const favoriteInfo = localStorage.getItem("hotelbook:favoriteInfo")
+
+    const index = hotel.findIndex((item) => item.id === hotelId)
+
+    const hotelInfo = hotel[index]
+
+    if (favoriteInfo.includes(`"name":"${hotelInfo.name}"`)) {
+      setValue("fill")
+    } else {
+      setValue("regular")
+    }
+  }, 200)
+
   return (
-    <Container>
+    <Container key={hotelId}>
       {hotel &&
         hotel.map((item) => (
           <>
@@ -80,8 +102,13 @@ function DetailHotel() {
                 </Total>
               </DetailsGroup>
               <ImageBox>
-                <div onClick={() => isActive("fill")}>
-                  <HeartStraight weight={value} className="Heart" size={32} />
+                <div
+                  onClick={() => {
+                    isActive("fill")
+                    putInFavorites(item, "fill")
+                  }}
+                >
+                  <HeartStraight className="Heart" size={32} weight={value} />
                 </div>
                 <img src={item.url} />
               </ImageBox>

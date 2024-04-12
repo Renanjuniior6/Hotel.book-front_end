@@ -21,6 +21,10 @@ export const BoxUp = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 1rem 0 0.625rem 0;
+
+  svg {
+    cursor: pointer;
+  }
 `
 export const Paragraph = styled.div`
   p {
@@ -40,6 +44,6 @@ export const Info = styled.div`
   .icon {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 0.3125rem;
   }
 `

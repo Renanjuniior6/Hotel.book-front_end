@@ -1,6 +1,6 @@
 import { HeartStraight, MapPin } from "@phosphor-icons/react"
 import PropTypes from "prop-types"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 import { useFavorite } from "../../hooks/FavoriteContext"
@@ -11,7 +11,7 @@ function CardHotels({ hotel }) {
   const { putInFavorites } = useFavorite()
 
   const navigate = useNavigate()
-  const [value, setValue] = useState("light")
+  const [value, setValue] = useState()
 
   function getId(id) {
     if (hotel) {
@@ -21,11 +21,25 @@ function CardHotels({ hotel }) {
 
   function isActive(fill) {
     if (fill === value) {
-      setValue("light")
+      setValue("regular")
     } else {
       setValue(fill)
     }
   }
+
+  useEffect(() => {
+    const uploadLocalStorage = async () => {
+      const favoriteInfo = await localStorage.getItem("hotelbook:favoriteInfo")
+
+      if (favoriteInfo.includes(`"name":"${hotel.name}"`)) {
+        setValue("fill")
+      } else {
+        setValue("regular")
+      }
+    }
+
+    uploadLocalStorage()
+  }, [])
 
   return (
     <Container>
@@ -40,7 +54,7 @@ function CardHotels({ hotel }) {
           style={{ marginRight: 10 }}
           onClick={() => {
             isActive("fill")
-            putInFavorites(hotel)
+            putInFavorites(hotel, "fill")
           }}
           weight={value}
         />
@@ -68,7 +82,7 @@ function CardHotels({ hotel }) {
 }
 
 CardHotels.propTypes = {
-  hotel: PropTypes.string,
+  hotel: PropTypes.object,
 }
 
 export default CardHotels

@@ -10,30 +10,34 @@ export const FavoriteProvider = ({ children }) => {
     await localStorage.setItem("hotelbook:favoriteInfo", JSON.stringify(hotel))
   }
 
-  const putInFavorites = async (hotel) => {
+  const putInFavorites = async (hotel, fill) => {
     const hotelIndex = favoriteHotels.findIndex((ht) => ht.id === hotel.id)
 
     let newFavoriteHotels = []
     if (hotelIndex >= 0) {
       newFavoriteHotels = favoriteHotels
 
-      removeFavorite(hotel)
+      const index = newFavoriteHotels.findIndex((item) => item.id === hotel.id)
 
-      setFavoritesHotels(newFavoriteHotels)
+      newFavoriteHotels[index].favorite = "regular"
+
+      const removedHotel = newFavoriteHotels.filter((ht) => ht.id !== hotel.id)
+
+      setFavoritesHotels(removedHotel)
+
+      await uploadLocalStorage(removedHotel)
     } else {
       newFavoriteHotels = [...favoriteHotels, hotel]
+
+      newFavoriteHotels.map((item) => (item.favorite = fill))
       setFavoritesHotels(newFavoriteHotels)
+
+      await uploadLocalStorage(newFavoriteHotels)
     }
-
-    console.log(newFavoriteHotels)
-
-    await uploadLocalStorage(newFavoriteHotels)
   }
 
   const removeFavorite = async (hotel) => {
     const removedHotel = favoriteHotels.filter((ht) => ht.id !== hotel.id)
-
-    console.log(removedHotel)
 
     setFavoritesHotels(removedHotel)
 
@@ -54,7 +58,7 @@ export const FavoriteProvider = ({ children }) => {
 
   return (
     <FavoriteContext.Provider
-      value={{ putInFavorites, removeFavorite, favoriteHotels }}
+      value={{ putInFavorites, favoriteHotels, removeFavorite }}
     >
       {children}
     </FavoriteContext.Provider>

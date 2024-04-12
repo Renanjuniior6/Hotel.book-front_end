@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { toast } from "react-toastify"
 
 import CardHotels from "../../components/CardHotels"
 import api from "../../services/api"
@@ -7,17 +8,20 @@ import { Container } from "./styles"
 function Hotels() {
   const [hotels, setHotels] = useState([])
 
+  toast.clearWaitingQueue()
+
   useEffect(() => {
     async function loadLotels() {
-      const { data } = await api.get("/hotels")
+      const { data } = await toast.promise(api.get("/hotels"), {
+        pending: "Carregando",
+        error: "Não foi possível carregar",
+      })
 
       setHotels(data)
     }
 
     loadLotels()
   }, [])
-
-  console.log(hotels)
 
   return (
     <Container>

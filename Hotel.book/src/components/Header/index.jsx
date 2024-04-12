@@ -27,7 +27,7 @@ export function Header() {
       </ContainerLeft>
 
       <ContainerRight>
-        <a>
+        <a onClick={() => navigate("/favoritos")}>
           <div className="icon">
             {" "}
             <Heart size={20} weight="fill" style={{ marginRight: 10 }} />
@@ -36,7 +36,7 @@ export function Header() {
         </a>
         <a>Sobre</a>
 
-        <button>
+        <button onClick={() => navigate("/cadastro")}>
           <div className="icon">
             {" "}
             <User size={20} style={{ marginRight: 10 }} />

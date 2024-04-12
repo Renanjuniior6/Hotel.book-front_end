@@ -15,8 +15,13 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Header />
         <Routes />
       </FavoriteProvider>
-      <ToastContainer />
     </BrowserRouter>
     <GlobalStyle />
+    <ToastContainer
+      autoClose={1000}
+      theme="colored"
+      limit={1}
+      position="top-center"
+    />
   </React.StrictMode>,
 )
