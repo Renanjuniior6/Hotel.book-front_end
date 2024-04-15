@@ -1,9 +1,11 @@
 import { yupResolver } from "@hookform/resolvers/yup"
 import React from "react"
 import { useForm } from "react-hook-form"
+import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 import * as Yup from "yup"
 
+import { useUser } from "../../hooks/UserContext"
 import api from "../../services/api"
 import {
   Button,
@@ -12,7 +14,7 @@ import {
   ErrorMessage,
   Input,
   Label,
-  SingLink,
+  SignLink,
   Title,
 } from "./style"
 
@@ -22,8 +24,8 @@ function Login() {
       .email("O e-mail é invalido")
       .required("O e-mail é obrigatório"),
     password: Yup.string()
-      .required("A senha é obrigatório")
-      .min(6, "A senha deve ter no minimo 6 caracteristicas"),
+      .required("A senha é obrigatória")
+      .min(6, "A senha deve ter no minimo 6 dígitos"),
   })
 
   const {
@@ -34,18 +36,38 @@ function Login() {
     resolver: yupResolver(schema),
   })
 
+  const { putUserData } = useUser()
+
+  const navigate = useNavigate()
+
   const onSubmit = async (clientData) => {
-    const { data } = await toast.promise(
-      api.post("sessions", {
-        email: clientData.email,
-        password: clientData.password,
-      }),
-      {
-        pending: "Verificando seus dados",
-        success: "Tudo certo, seja bem-vindo 👌",
-        error: "Verfique seu e-mail e senha 🤯",
-      },
-    )
+    try {
+      const { status, data } = await api.post(
+        "session",
+        {
+          email: clientData.email,
+          password: clientData.password,
+        },
+        { validateStatus: () => true },
+      )
+
+      console.log(status)
+
+      if (status === 200 || status === 201) {
+        putUserData(data)
+        toast.success("Login efetuado")
+
+        setTimeout(() => {
+          navigate("/")
+        }, 1000)
+      } else if (status === 401) {
+        toast.error("Verifique seu email ou senha!")
+      } else {
+        throw new Error()
+      }
+    } catch (err) {
+      toast.error("Falha no sistema, tente novamente!")
+    }
   }
 
   return (
@@ -60,26 +82,26 @@ function Login() {
         <form noValidate onSubmit={handleSubmit(onSubmit)}>
           <Label error={errors.email?.message}>Email</Label>
           <Input
-            typer="email"
+            type="email"
             {...register("email")}
             error={errors.email?.message}
           />
-          <ErrorMessage>{errors.name?.email}</ErrorMessage>
+          <ErrorMessage>{errors.email?.message}</ErrorMessage>
 
           <Label error={errors.password?.message}>Senha</Label>
           <Input
-            typer="password"
+            type="password"
             {...register("password")}
             error={errors.password?.message}
           />
-          <ErrorMessage>{errors.password?.email}</ErrorMessage>
+          <ErrorMessage>{errors.password?.message}</ErrorMessage>
 
-          <Button>Entrar</Button>
+          <Button type="submit">Entrar</Button>
         </form>
 
-        <SingLink>
-          Não tem conta? <a>Sing up</a>{" "}
-        </SingLink>
+        <SignLink>
+          Não tem conta? <a>Sign up</a>{" "}
+        </SignLink>
       </ContainerItens>
     </Container>
   )

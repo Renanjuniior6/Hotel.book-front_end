@@ -17,7 +17,7 @@ export const Container = styled.div`
 `
 
 export const ContainerItens = styled.div`
-  background: #023509;
+  background: #052659;
   box-shadow: 0px 4px 15px rgba(74, 164, 226, 0.24);
   border-radius: 10px;
   height: 70%;
@@ -82,7 +82,7 @@ export const Button = styled.button`
   }
 `
 
-export const SingLink = styled.a`
+export const SignLink = styled.a`
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -95,4 +95,11 @@ export const SingLink = styled.a`
   }
 `
 
-export const ErrorMessage = styled.p``
+export const ErrorMessage = styled.p`
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #cc1717;
+  margin-top: 2px;
+`

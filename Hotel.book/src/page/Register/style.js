@@ -71,7 +71,7 @@ export const Input = styled.input`
   padding-left: 10px;
 `
 
-export const SingLink = styled.a`
+export const SignLink = styled.a`
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
