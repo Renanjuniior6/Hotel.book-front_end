@@ -1,7 +1,9 @@
 import { yupResolver } from "@hookform/resolvers/yup"
 import React from "react"
+import { useUser } from "../../hooks/UseContext"
 import { useForm } from "react-hook-form"
 import { toast } from "react-toastify"
+import Logo from "../../../images/Tela de login.jpg"
 import * as Yup from "yup"
 
 import api from "../../services/api"
@@ -12,14 +14,17 @@ import {
   ErrorMessage,
   Input,
   Label,
+  LoginImg,
   SingLink,
   Title,
 } from "./style"
 
 function Login() {
+  const {putUserData} = useUser()
+
   const schema = Yup.object().shape({
     email: Yup.string()
-      .email("O e-mail é invalido")
+      .email("Digite um email valido")
       .required("O e-mail é obrigatório"),
     password: Yup.string()
       .required("A senha é obrigatório")
@@ -46,10 +51,14 @@ function Login() {
         error: "Verfique seu e-mail e senha 🤯",
       },
     )
+
+    putUserData(data)
   }
 
   return (
     <Container>
+      <LoginImg src={Logo} />
+
       <ContainerItens>
         <Title>
           <b>H</b>otel.Book

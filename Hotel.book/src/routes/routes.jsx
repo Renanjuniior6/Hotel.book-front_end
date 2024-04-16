@@ -1,6 +1,7 @@
 import React from "react"
 import { Route, Routes } from "react-router-dom"
 
+//import PrivateRoutes from "./private-routes"
 import DetailHotel from "../page/DetailHotel"
 import Favorites from "../page/Favorites"
 import Home from "../page/Home"
