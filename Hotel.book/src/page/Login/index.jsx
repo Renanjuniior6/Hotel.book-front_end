@@ -1,13 +1,12 @@
 import { yupResolver } from "@hookform/resolvers/yup"
 import React from "react"
-import { useUser } from "../../hooks/UseContext"
+import { useUser } from "../../hooks/UserContext"
 import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 import Logo from "../../../images/Tela de login.jpg"
 import * as Yup from "yup"
 
-import { useUser } from "../../hooks/UserContext"
 import api from "../../services/api"
 import {
   Button,
@@ -17,12 +16,12 @@ import {
   Input,
   Label,
   LoginImg,
-  SingLink,
+  SignLink,
   Title,
 } from "./style"
 
 function Login() {
-  const {putUserData} = useUser()
+ const {putUserData} = useUser()
 
   const schema = Yup.object().shape({
     email: Yup.string()
@@ -41,7 +40,7 @@ function Login() {
     resolver: yupResolver(schema),
   })
 
-  const { putUserData } = useUser()
+  
 
   const navigate = useNavigate()
 

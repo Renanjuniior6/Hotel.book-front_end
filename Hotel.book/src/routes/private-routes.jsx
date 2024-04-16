@@ -1,5 +1,5 @@
 import { Route, Redirect } from "react-router-dom"
-import  PropTypes  from "@mui/material"
+import  PropTypes  from "prop-types"
 
 function PrivateRoutes({component, ...rest}){
   const user = localStorage.getItem('hotelBook:userData')
