@@ -2,7 +2,7 @@ import { Route, Redirect } from "react-router-dom"
 import  PropTypes  from "prop-types"
 
 function PrivateRoutes({component, ...rest}){
-  const user = localStorage.getItem('hotelBook:userData')
+  const user = localStorage.getItem('hotelbook:userData')
 
   if(!user){
     return <Redirect to="/login" />
@@ -14,5 +14,5 @@ function PrivateRoutes({component, ...rest}){
 export default PrivateRoutes
 
 PrivateRoutes.propTypes = {
-  component: PropTypes.setOfType(PropTypes.func, PropTypes.element)
+  component: PropTypes.oneOfType([PropTypes.func, PropTypes.element])
 }
