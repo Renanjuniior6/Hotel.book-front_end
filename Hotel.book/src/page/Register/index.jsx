@@ -1,10 +1,11 @@
 import { yupResolver } from "@hookform/resolvers/yup"
 import React from "react"
 import { useForm } from "react-hook-form"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 import * as Yup from "yup"
 
+import { Button } from "../../components/Button"
 import api from "../../services/api"
 import {
   Container,
@@ -13,7 +14,7 @@ import {
   Label,
   ErrorMessage,
   Title,
-  SingLink,
+  SignLink,
 } from "./style"
 
 function Register() {
@@ -22,10 +23,10 @@ function Register() {
     email: Yup.string().required("O seu email é obrigatorio"),
     password: Yup.string()
       .required("A senha é obrigatoria")
-      .min(6, "A senha deve ter no minimo 6 caracteristicas"),
-    confirmPassoword: Yup.string()
+      .min(6, "A senha deve ter no minimo 6 dígitos"),
+    confirmPassword: Yup.string()
       .required("A senha é obrigatoria")
-      .oneOf([Yup.ref("password")], "As senhas devem ser parecida"),
+      .oneOf([Yup.ref("password")], "As senhas devem ser iguais"),
   })
 
   const {
@@ -36,29 +37,33 @@ function Register() {
     resolver: yupResolver(schema),
   })
 
+  const navigate = useNavigate()
+
   const onSubmit = async (clientData) => {
     try {
-      const { status } = await api.get(
-        "session",
+      const { status } = await api.post(
+        "users",
         {
           name: clientData.name,
-          emial: clientData.email,
+          email: clientData.email,
           password: clientData.password,
         },
-        {
-          validityStatus: () => true,
-        },
+        { validateStatus: () => true },
       )
 
       if (status === 200 || status === 201) {
-        toast.promise("Parabéns, cadastro realizado com sucesso!")
+        toast.success("Cadastro realizado!")
+
+        setTimeout(() => {
+          navigate("/login")
+        }, 1000)
       } else if (status === 409) {
-        toast.error("O email já esta registrado, faça login")
+        toast.error("Email já cadastrado")
       } else {
         throw new Error()
       }
-    } catch (erros) {
-      toast.error("O sistema está fora do ar")
+    } catch (err) {
+      toast.error("Falha no sistema! Tente novamente")
     }
   }
 
@@ -74,7 +79,7 @@ function Register() {
         <form noValidate onSubmit={handleSubmit(onSubmit)}>
           <Label error={errors.name?.message}>Nome</Label>
           <Input
-            typer="text"
+            type="text"
             {...register("name")}
             error={errors.name?.message}
           />
@@ -82,35 +87,39 @@ function Register() {
 
           <Label error={errors.email?.message}>Email</Label>
           <Input
-            typer="email"
+            type="email"
             {...register("email")}
             error={errors.email?.message}
           />
-          <ErrorMessage>{errors.name?.email}</ErrorMessage>
+          <ErrorMessage>{errors.email?.message}</ErrorMessage>
 
           <Label error={errors.password?.message}>Senha</Label>
           <Input
-            typer="password"
+            type="password"
             {...register("password")}
             error={errors.password?.message}
           />
-          <ErrorMessage>{errors.name?.email}</ErrorMessage>
+          <ErrorMessage>{errors.password?.message}</ErrorMessage>
 
-          <Label error={errors.password?.message}>Confimar sua senha</Label>
+          <Label error={errors.confirmPassword?.message}>
+            Confirme sua senha
+          </Label>
           <Input
-            typer="password"
-            {...register("password")}
-            error={errors.password?.message}
+            type="password"
+            {...register("confirmPassword")}
+            error={errors.confirmPassword?.message}
           />
-          <ErrorMessage>{errors.name?.email}</ErrorMessage>
+          <ErrorMessage>{errors.confirmPassword?.message}</ErrorMessage>
+
+          <Button type="submit">Cadastrar</Button>
         </form>
 
-        <SingLink>
+        <SignLink>
           Já tem conta?{" "}
-          <Link style={{ color: "#FFFf" }} to="/Login">
+          <Link style={{ color: "#ffff" }} to="/Login">
             Entrar
           </Link>{" "}
-        </SingLink>
+        </SignLink>
       </ContainerItens>
     </Container>
   )

@@ -25,7 +25,11 @@ export const Container = styled.div`
 `
 
 export const ContainerItens = styled.div`
+<<<<<<< HEAD
   background: #3F2378;
+=======
+  background: #052659;
+>>>>>>> 5097a1cad14a4fcfe319f487e78f3274e2ab737c
   box-shadow: 0px 4px 15px rgba(74, 164, 226, 0.24);
   height: 71%;
   padding: 10px 20px;
@@ -89,7 +93,7 @@ export const Button = styled.button`
   }
 `
 
-export const SingLink = styled.a`
+export const SignLink = styled.a`
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -102,4 +106,11 @@ export const SingLink = styled.a`
   }
 `
 
-export const ErrorMessage = styled.p``
+export const ErrorMessage = styled.p`
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #cc1717;
+  margin-top: 2px;
+`
