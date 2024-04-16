@@ -51,8 +51,6 @@ function Login() {
         { validateStatus: () => true },
       )
 
-      console.log(status)
-
       if (status === 200 || status === 201) {
         putUserData(data)
         toast.success("Login efetuado")
@@ -80,7 +78,7 @@ function Login() {
         <h1>Welcome !</h1>
 
         <form noValidate onSubmit={handleSubmit(onSubmit)}>
-          <Label error={errors.email?.message}>Email</Label>
+          <Label>Email</Label>
           <Input
             type="email"
             {...register("email")}
@@ -88,7 +86,7 @@ function Login() {
           />
           <ErrorMessage>{errors.email?.message}</ErrorMessage>
 
-          <Label error={errors.password?.message}>Senha</Label>
+          <Label>Senha</Label>
           <Input
             type="password"
             {...register("password")}
