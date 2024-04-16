@@ -1,11 +1,12 @@
 import { yupResolver } from "@hookform/resolvers/yup"
 import React from "react"
+import { useUser } from "../../hooks/UserContext"
 import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
+import Logo from "../../../images/Tela de login.jpg"
 import * as Yup from "yup"
 
-import { useUser } from "../../hooks/UserContext"
 import api from "../../services/api"
 import {
   Button,
@@ -14,14 +15,17 @@ import {
   ErrorMessage,
   Input,
   Label,
+  LoginImg,
   SignLink,
   Title,
 } from "./style"
 
 function Login() {
+ const {putUserData} = useUser()
+
   const schema = Yup.object().shape({
     email: Yup.string()
-      .email("O e-mail é invalido")
+      .email("Digite um email valido")
       .required("O e-mail é obrigatório"),
     password: Yup.string()
       .required("A senha é obrigatória")
@@ -36,11 +40,24 @@ function Login() {
     resolver: yupResolver(schema),
   })
 
-  const { putUserData } = useUser()
+  
 
   const navigate = useNavigate()
 
   const onSubmit = async (clientData) => {
+    const { data } = await toast.promise(
+      api.post("sessions", {
+        email: clientData.email,
+        password: clientData.password,
+      }),
+      {
+        pending: "Verificando seus dados",
+        success: "Tudo certo, seja bem-vindo 👌",
+        error: "Verfique seu e-mail e senha 🤯",
+      },
+    )
+
+    putUserData(data)
     try {
       const { status, data } = await api.post(
         "session",
@@ -70,6 +87,8 @@ function Login() {
 
   return (
     <Container>
+      <LoginImg src={Logo} />
+
       <ContainerItens>
         <Title>
           <b>H</b>otel.Book

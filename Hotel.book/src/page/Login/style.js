@@ -6,6 +6,14 @@ export const Title = styled.p`
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #19DDFA; 
+
+  b {
+    color:#E75159;
+  }
+`
+export const LoginImg = styled.img`
+    height: 71%;
 `
 
 export const Container = styled.div`
@@ -17,11 +25,10 @@ export const Container = styled.div`
 `
 
 export const ContainerItens = styled.div`
-  background: #052659;
+  background: #3F2378;
   box-shadow: 0px 4px 15px rgba(74, 164, 226, 0.24);
-  border-radius: 10px;
-  height: 70%;
-  padding: 25px 75px;
+  height: 71%;
+  padding: 10px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -61,7 +68,7 @@ export const Input = styled.input`
 export const Button = styled.button`
   width: 182.81px;
   height: 56.53px;
-  background: red;
+  background: #235396;
   border-radius: 28px;
   border: none;
   cursor: pointer;
