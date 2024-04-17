@@ -6,11 +6,13 @@ Projeto front end do Hotel.Book
 
 # Criar rotas privadas (favoritos) ✔
 
+# Remover o Header de Login e Cadastro ✔
+
 # Estilização da tela de login e cadastro
 
 # Ajuste no Header (nome de usuário logado)
 
-# logout do usuário
+# logout do usuário (modal de aviso)
 
 # Criar filtro de buscas
 
