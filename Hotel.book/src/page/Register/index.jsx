@@ -4,10 +4,9 @@ import { useForm } from "react-hook-form"
 import { Link, useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 import * as Yup from "yup"
-//import Logo from "../../../images/cadastro.jpg"
+// import Logo from "../../../images/cadastro.jpg"
 
 import { Button } from "../../components/Button"
-
 import api from "../../services/api"
 import {
   Container,
@@ -70,7 +69,6 @@ function Register() {
 
   return (
     <Container>
-
       <ContainerItens>
         <h1>Faça sua conta!</h1>
 
