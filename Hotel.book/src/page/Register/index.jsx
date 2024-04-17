@@ -112,7 +112,7 @@ function Register() {
 
         <SignLink>
           Já tem conta?{" "}
-          <Link style={{ color: "#ffff" }} to="/Login">
+          <Link style={{ color: "#ffff" }} to="/login">
             Entrar
           </Link>{" "}
         </SignLink>

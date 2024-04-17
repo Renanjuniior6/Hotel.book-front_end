@@ -12,6 +12,7 @@ import execWoman from "../../../images/img-executive-woman.webp"
 import woman from "../../../images/img-woman-home.webp"
 import sofa from "../../../images/sofa-img.png"
 import { Button } from "../../components/Button"
+import { Header } from "../../components/Header"
 import {
   Container,
   SearchBox,
@@ -34,6 +35,7 @@ function Home() {
 
   return (
     <>
+      <Header />
       <Container>
         <SearchBox>
           <Title>Encontre o Hotel ideal para você </Title>

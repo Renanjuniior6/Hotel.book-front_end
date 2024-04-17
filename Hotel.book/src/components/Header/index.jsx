@@ -1,15 +1,32 @@
 import { Heart, User } from "@phosphor-icons/react"
-import React from "react"
+import React, { useState } from "react"
 import { useNavigate, useLocation } from "react-router"
 
-import { Container, Title, ContainerLeft, ContainerRight, Links } from "./style"
+import { useUser } from "../../hooks/UserContext"
+import Modal from "../Modal"
+import {
+  Container,
+  Title,
+  ContainerLeft,
+  ContainerRight,
+  Links,
+  ProfileButton,
+  UserName,
+  Group,
+  Logout,
+  Border,
+  About,
+} from "./style"
 
 export function Header() {
   const navigate = useNavigate()
   const { pathname } = useLocation()
+  const { userData } = useUser()
+  const [modal, setModal] = useState(false)
 
   return (
     <Container>
+      {modal === true && <Modal setModal={setModal} />}
       <ContainerLeft>
         <Title>
           <b>H</b>otel.Book
@@ -30,19 +47,33 @@ export function Header() {
         <a onClick={() => navigate("/favoritos")}>
           <div className="icon">
             {" "}
-            <Heart size={20} weight="fill" style={{ marginRight: 10 }} />
+            <Heart size={22} weight="fill" style={{ marginRight: 10 }} />
             Favoritos
           </div>
         </a>
-        <a>Sobre</a>
+        <About>
+          <a>Sobre</a>
+        </About>
 
-        <button onClick={() => navigate("/cadastro")}>
-          <div className="icon">
-            {" "}
-            <User size={20} style={{ marginRight: 10 }} />
-            Entrar
-          </div>
-        </button>
+        {userData && userData.name ? (
+          <>
+            <Border>
+              <Group>
+                <User size={23} style={{ marginRight: 10 }} />
+                <UserName>Olá, {userData.name}!</UserName>
+              </Group>
+            </Border>
+            <Logout onClick={() => setModal(true)}>Sair</Logout>
+          </>
+        ) : (
+          <ProfileButton onClick={() => navigate("/cadastro")}>
+            <div className="icon">
+              {" "}
+              <User size={20} style={{ marginRight: 10 }} />
+              Entrar
+            </div>
+          </ProfileButton>
+        )}
       </ContainerRight>
     </Container>
   )

@@ -45,25 +45,13 @@ export const Links = styled.a`
 
 export const ContainerRight = styled.div`
   display: flex;
-  gap: 2.8125rem;
+  gap: 10px;
   align-items: center;
   margin-right: 4%;
 
   .icon {
     display: flex;
     align-items: center;
-  }
-
-  button {
-    background: transparent;
-    cursor: pointer;
-    font-size: 1.0625rem;
-    padding: 0.625rem 0.9375rem;
-
-    &:hover {
-      color: #fff;
-      background-color: #052659;
-    }
   }
 
   a {
@@ -74,5 +62,44 @@ export const ContainerRight = styled.div`
     &:hover {
       color: #052659;
     }
+  }
+`
+
+export const About = styled.div`
+  border-left: 3px solid #052659;
+  padding-left: 5px;
+`
+
+export const Border = styled.div`
+  border-right: 3px solid #052659;
+  border-left: 3px solid #052659;
+`
+
+export const Group = styled.div`
+  display: flex;
+  margin-right: 10px;
+  margin-left: 10px;
+`
+
+export const UserName = styled.p``
+
+export const Logout = styled.p`
+  margin-left: 5px;
+  cursor: pointer;
+
+  &:hover {
+    color: red;
+  }
+`
+
+export const ProfileButton = styled.button`
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.0625rem;
+  padding: 0.625rem 0.9375rem;
+
+  &:hover {
+    color: #fff;
+    background-color: #052659;
   }
 `

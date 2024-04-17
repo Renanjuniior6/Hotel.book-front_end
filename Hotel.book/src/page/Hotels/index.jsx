@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { toast } from "react-toastify"
 
 import CardHotels from "../../components/CardHotels"
+import { Header } from "../../components/Header"
 import api from "../../services/api"
 import { Container } from "./styles"
 
@@ -24,10 +25,13 @@ function Hotels() {
   }, [])
 
   return (
-    <Container>
-      {hotels &&
-        hotels.map((hotel) => <CardHotels key={hotel.id} hotel={hotel} />)}
-    </Container>
+    <>
+      <Header />
+      <Container>
+        {hotels &&
+          hotels.map((hotel) => <CardHotels key={hotel.id} hotel={hotel} />)}
+      </Container>
+    </>
   )
 }
 

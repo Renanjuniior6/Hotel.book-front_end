@@ -10,9 +10,9 @@ Projeto front end do Hotel.Book
 
 # Estilização da tela de login e cadastro
 
-# Ajuste no Header (nome de usuário logado)
+# Ajuste no Header (nome de usuário logado) ✔
 
-# logout do usuário (modal de aviso)
+# logout do usuário (modal de aviso) ✔
 
 # Criar filtro de buscas
 
