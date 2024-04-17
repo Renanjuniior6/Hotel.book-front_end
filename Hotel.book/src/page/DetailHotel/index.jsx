@@ -13,6 +13,7 @@ import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { toast } from "react-toastify"
 
+import Calendario from "../../components/Calendar"
 import { Button } from "../../components/Button"
 import { useFavorite } from "../../hooks/FavoriteContext"
 import api from "../../services/api"
@@ -155,6 +156,7 @@ function DetailHotel() {
                   </IconsGroup>
                 </Group>
               </LeftBox>
+              <Calendario />
               <RightBox>
                 <div className="container">
                   <p className="rent">Aluguel:</p>
