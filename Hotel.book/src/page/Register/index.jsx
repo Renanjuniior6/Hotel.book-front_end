@@ -4,8 +4,10 @@ import { useForm } from "react-hook-form"
 import { Link, useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 import * as Yup from "yup"
+//import Logo from "../../../images/cadastro.jpg"
 
 import { Button } from "../../components/Button"
+
 import api from "../../services/api"
 import {
   Container,
@@ -13,7 +15,6 @@ import {
   Input,
   Label,
   ErrorMessage,
-  Title,
   SignLink,
 } from "./style"
 
@@ -69,12 +70,9 @@ function Register() {
 
   return (
     <Container>
-      <ContainerItens>
-        <Title>
-          <b>H</b>otel.Book
-        </Title>
 
-        <h1>Log in or create an account</h1>
+      <ContainerItens>
+        <h1>Faça sua conta!</h1>
 
         <form noValidate onSubmit={handleSubmit(onSubmit)}>
           <Label error={errors.name?.message}>Nome</Label>

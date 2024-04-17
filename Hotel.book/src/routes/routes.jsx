@@ -1,12 +1,12 @@
 import React from "react"
 import { Route, Routes } from "react-router-dom"
 
-import DetailHotel from "../Page/DetailHotel"
-import Favorites from "../Page/Favorites"
-import Home from "../Page/Home"
-import Hotels from "../Page/Hotels"
-import Login from "../Page/Login"
-import Register from "../Page/Register"
+import DetailHotel from "../page/DetailHotel"
+import Favorites from "../page/Favorites"
+import Home from "../page/Home"
+import Hotels from "../page/Hotels"
+import Login from "../page/Login"
+import Register from "../page/Register"
 import PrivateRoutes from "./private-routes"
 
 function Router() {
