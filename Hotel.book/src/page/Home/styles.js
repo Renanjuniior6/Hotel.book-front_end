@@ -11,7 +11,7 @@ export const Container = styled.div`
   margin-bottom: 5rem;
 `
 
-export const SearchBox = styled.div`
+export const SearchBox = styled.form`
   padding: 1.875rem 1.25rem;
   display: flex;
   flex-direction: column;

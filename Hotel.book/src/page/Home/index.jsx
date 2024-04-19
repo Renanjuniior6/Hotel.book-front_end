@@ -1,3 +1,4 @@
+import { yupResolver } from "@hookform/resolvers/yup"
 import {
   MapPin,
   Money,
@@ -5,14 +6,19 @@ import {
   ArrowRight,
   Lightning,
 } from "@phosphor-icons/react"
-import React from "react"
+import React, { useEffect, useState } from "react"
+import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router"
+import * as Yup from "yup"
 
 import execWoman from "../../../images/img-executive-woman.webp"
 import woman from "../../../images/img-woman-home.webp"
 import sofa from "../../../images/sofa-img.png"
 import { Button } from "../../components/Button"
 import { Header } from "../../components/Header"
+import { useUser } from "../../hooks/UserContext"
+import api from "../../services/api"
+import { formatCurrency } from "../../utils/formatCurrency"
 import {
   Container,
   SearchBox,
@@ -31,46 +37,89 @@ import {
 } from "./styles"
 
 function Home() {
+  const { setSearchData } = useUser()
   const navigate = useNavigate()
+  const [city, setCity] = useState()
+
+  useEffect(() => {
+    const loadCities = async () => {
+      const { data } = await api.get("/cities")
+
+      setCity(data)
+    }
+
+    loadCities()
+  }, [])
+
+  const schema = Yup.object().shape({
+    city: Yup.string().required(),
+    price: Yup.string().required(),
+    rooms: Yup.string().required(),
+  })
+
+  const {
+    register,
+    handleSubmit,
+    // formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  })
+
+  const onSubmit = (data) => {
+    data.rooms = parseInt(data.rooms)
+    const formatedPrice = data.price
+    data.price = formatedPrice
+      .replace(/,/g, "")
+      .replace(/\./g, "")
+      .replace(/'R$'/g, "")
+      .replace("R$", "")
+    data.price = parseInt(data.price)
+    data.price = data.price / 100
+
+    setSearchData(data)
+    navigate("/filtro-hotéis")
+  }
+
+  const prices = [1000, 2000, 3000, 4000, 5000]
 
   return (
     <>
       <Header />
       <Container>
-        <SearchBox>
+        <SearchBox noValidate onSubmit={handleSubmit(onSubmit)}>
           <Title>Encontre o Hotel ideal para você </Title>
           <Label>
             <Icon>
               <MapPin size={20} /> Cidade
             </Icon>
-            <select>
-              <option>Rio de Janeiro</option>
-              <option>São Paulo</option>
-              <option>Minas Gerais</option>
-              <option>Manaus</option>
+            <select {...register("city")}>
+              {!city && <option>Manaus</option>}
+              {city &&
+                city.map((item) => <option key={item.id}>{item.name}</option>)}
             </select>
           </Label>
           <Label>
             <Icon>
               <Money size={20} /> Valor total até
             </Icon>
-            <select>
-              <option>R$ 1000,00</option>
-              <option>R$ 2000,00</option>
-              <option>R$ 3000,00</option>
+            <select {...register("price")}>
+              {prices.map((item) => (
+                <option key={item}>{formatCurrency(item)}</option>
+              ))}
             </select>
           </Label>
           <Label>
             <Icon>
               <Bed size={20} /> Quartos
             </Icon>
-            <select>
+            <select {...register("rooms")}>
               <option>1</option>
               <option>2</option>
               <option>3</option>
+              <option>4</option>
             </select>
           </Label>
-          <Button>Buscar Hotéis</Button>
+          <Button type="submit">Buscar Hotéis</Button>
         </SearchBox>
       </Container>
 

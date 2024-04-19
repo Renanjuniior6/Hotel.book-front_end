@@ -14,5 +14,5 @@ Projeto front end do Hotel.Book
 
 # logout do usuário (modal de aviso) ✔
 
-# Criar filtro de buscas
+# Criar filtro de buscas ✔
 

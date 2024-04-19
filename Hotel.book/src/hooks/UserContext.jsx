@@ -6,6 +6,8 @@ const UserContext = createContext({})
 export const UserProvider = ({ children }) => {
   const [userData, setUserData] = useState({})
 
+  const [SearchData, setSearchData] = useState()
+
   const putUserData = async (userInfo) => {
     setUserData(userInfo)
 
@@ -30,7 +32,15 @@ export const UserProvider = ({ children }) => {
   }, [])
 
   return (
-    <UserContext.Provider value={{ putUserData, userData, logout }}>
+    <UserContext.Provider
+      value={{
+        putUserData,
+        userData,
+        logout,
+        SearchData,
+        setSearchData,
+      }}
+    >
       {children}
     </UserContext.Provider>
   )

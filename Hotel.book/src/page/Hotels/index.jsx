@@ -17,10 +17,8 @@ function Hotels() {
         pending: "Carregando",
         error: "Não foi possível carregar",
       })
-
       setHotels(data)
     }
-
     loadLotels()
   }, [])
 
@@ -29,7 +27,7 @@ function Hotels() {
       <Header />
       <Container>
         {hotels &&
-          hotels.map((hotel) => <CardHotels key={hotel.id} hotel={hotel} />)}
+          hotels.map((item) => <CardHotels key={item.id} hotel={item} />)}
       </Container>
     </>
   )
