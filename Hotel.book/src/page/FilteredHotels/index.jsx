@@ -5,10 +5,11 @@ import CardHotels from "../../components/CardHotels"
 import { Header } from "../../components/Header"
 import { useUser } from "../../hooks/UserContext"
 import api from "../../services/api"
-import { Container, Empty } from "./styles"
+import { Container, EmptyBox } from "./styles"
 
 function FilteredHotels() {
   const [filteredHotels, setFilteredHotels] = useState([])
+  const [empty, setEmpty] = useState(false)
   const { SearchData } = useUser()
 
   toast.clearWaitingQueue()
@@ -19,15 +20,17 @@ function FilteredHotels() {
         pending: "Carregando",
         error: "Não foi possível carregar",
       })
-
       if (SearchData) {
-        console.log("Oi, estou aqui")
         const result = data.filter(
           (item) =>
             item.city.name === SearchData.city &&
-            item.rooms === SearchData.rooms &&
+            item.rooms >= SearchData.rooms &&
             item.price <= SearchData.price,
         )
+
+        if (!result.length > 0) {
+          setEmpty(true)
+        }
         setFilteredHotels(result)
       }
     }
@@ -38,14 +41,14 @@ function FilteredHotels() {
     <>
       <Header />
       <Container>
-        {filteredHotels && filteredHotels.length > 0 ? (
+        {filteredHotels &&
           filteredHotels.map((item) => (
             <CardHotels key={item.id} hotel={item} />
-          ))
-        ) : (
-          <Empty>
+          ))}
+        {empty && (
+          <EmptyBox>
             <p>Sem resultados para a sua busca :(</p>
-          </Empty>
+          </EmptyBox>
         )}
       </Container>
     </>

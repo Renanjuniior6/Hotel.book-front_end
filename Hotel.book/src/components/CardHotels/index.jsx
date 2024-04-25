@@ -20,7 +20,11 @@ function CardHotels({ hotel }) {
   }
 
   function isActive(fill) {
-    if (fill === value) {
+    const user = localStorage.getItem("hotelbook:userData")
+
+    if (!user) {
+      navigate("/login")
+    } else if (fill === value) {
       setValue("regular")
     } else {
       setValue(fill)

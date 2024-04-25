@@ -57,16 +57,15 @@ function Home() {
     rooms: Yup.string().required(),
   })
 
-  const {
-    register,
-    handleSubmit,
-    // formState: { errors },
-  } = useForm({
+  const { register, handleSubmit } = useForm({
     resolver: yupResolver(schema),
   })
 
   const onSubmit = (data) => {
+    const formatedRooms = data.rooms
+    data.rooms = formatedRooms.replace("+", "")
     data.rooms = parseInt(data.rooms)
+
     const formatedPrice = data.price
     data.price = formatedPrice
       .replace(/,/g, "")
@@ -77,6 +76,7 @@ function Home() {
     data.price = data.price / 100
 
     setSearchData(data)
+
     navigate("/filtro-hotéis")
   }
 
@@ -113,10 +113,10 @@ function Home() {
               <Bed size={20} /> Quartos
             </Icon>
             <select {...register("rooms")}>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
+              <option>1+</option>
+              <option>2+</option>
+              <option>3+</option>
+              <option>4+</option>
             </select>
           </Label>
           <Button type="submit">Buscar Hotéis</Button>

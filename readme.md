@@ -16,3 +16,28 @@ Projeto front end do Hotel.Book
 
 # Criar filtro de buscas ✔
 
+///////////////////////////////////////////////////// Correção de bugs
+
+# Redirecionar quando clicar no ícone de favoritar ✔
+
+# Correção em busca filtrada, (quartos, 1+) ✔
+
+# Verificar status em "login" ✔
+
+# Toast em "Agendar Hospedagem" ✔
+
+# Verificação de senha em "login" ✔
+
+# Carregamento da tela de "FilteredHotels" ✔
+
+# Footer de informações em "Home"
+
+# Styles do Header
+
+# Componetizar botões
+
+# Links da tela de "Home"
+
+# Mudar medidas de px para rem
+
+# Responsividade

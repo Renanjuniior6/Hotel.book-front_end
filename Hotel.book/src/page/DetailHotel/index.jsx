@@ -10,7 +10,7 @@ import {
   Subway,
 } from "@phosphor-icons/react"
 import React, { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 
 import { Button } from "../../components/Button"
@@ -42,6 +42,7 @@ function DetailHotel() {
   const { putInFavorites } = useFavorite()
 
   const hotelId = parseInt(id)
+  const navigate = useNavigate()
 
   toast.clearWaitingQueue()
 
@@ -61,7 +62,11 @@ function DetailHotel() {
   }, [])
 
   function isActive(fill) {
-    if (fill === value) {
+    const user = localStorage.getItem("hotelbook:userData")
+
+    if (!user) {
+      navigate("/login")
+    } else if (fill === value) {
       setValue("regular")
     } else {
       setValue(fill)
@@ -81,6 +86,10 @@ function DetailHotel() {
       setValue("regular")
     }
   }, 200)
+
+  const showToast = () => {
+    toast.success("Agendamento efetuado!", { autoClose: 2000 })
+  }
 
   return (
     <>
@@ -183,7 +192,9 @@ function DetailHotel() {
                         )}
                       </p>
                     </div>
-                    <Button>Alugar Hospedagem</Button>
+                    <Button onClick={() => showToast()}>
+                      Agendar Hospedagem
+                    </Button>
                   </TotalValue>
                 </RightBox>
               </Content2>

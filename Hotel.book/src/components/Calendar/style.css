@@ -1,19 +1,24 @@
+.app {
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 20px;
+}
+
 .react-calendar {
-  width: 400px;
+  width: 25rem;
   max-width: 100%;
   background-color: #fff;
   color: #222;
-  border-radius: 8px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   line-height: 1.125em;
+  margin: 10px 0 20px 0;
 }
 
 .react-calendar__navigation button {
-  color: #052659;
+  color: #000;
   min-width: 44px;
-  background: none;
-  font-size: 16px;
-  margin-top: 8px;
+  font-size: 17px;
+  margin: 0 0 10px 0;
+  padding: 0 10px 0 10px;
 }
 
 .react-calendar__navigation button:enabled:hover,
@@ -32,23 +37,21 @@ abbr[title] {
 .react-calendar__tile:enabled:hover,
 .react-calendar__tile:enabled:focus {
   background: #f8f8fa;
-  color: #6f48eb;
-  border-radius: 6px;
+  color: #052659;
+ 
 }
 
 .react-calendar__tile--now {
-  background: #6f48eb33;
-  border-radius: 6px;
   font-weight: bold;
-  color: #6f48eb;
+  color: #052659;
 }
 
-.react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:hover {
+  opacity: 0.8;
+}
 .react-calendar__tile--now:enabled:focus {
   background: #6f48eb33;
-  border-radius: 6px;
   font-weight: bold;
-  color: #6f48eb;
 }
 
 .react-calendar__tile--hasActive:enabled:hover,
@@ -57,15 +60,13 @@ abbr[title] {
 }
 
 .react-calendar__tile--active {
-  background: #6f48eb;
-  border-radius: 6px;
   font-weight: bold;
   color: white;
 }
 
 .react-calendar__tile--active:enabled:hover,
 .react-calendar__tile--active:enabled:focus {
-  background: #6f48eb;
+  background: #052659;
   color: white;
 }
 
@@ -75,24 +76,18 @@ abbr[title] {
 
 .react-calendar__tile--range {
   background: #f8f8fa;
-  color: #6f48eb;
   border-radius: 0;
 }
 
 .react-calendar__tile--rangeStart {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
-  background: #6f48eb;
   color: white;
 }
 
 .react-calendar__tile--rangeEnd {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-  background: #6f48eb;
+  background: #052659;
   color: white;
 }

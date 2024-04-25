@@ -11,6 +11,12 @@ export const FavoriteProvider = ({ children }) => {
   }
 
   const putInFavorites = async (hotel, fill) => {
+    const userExists = localStorage.getItem("hotelbook:userData")
+
+    if (!userExists) {
+      return
+    }
+
     const hotelIndex = favoriteHotels.findIndex((ht) => ht.id === hotel.id)
 
     let newFavoriteHotels = []

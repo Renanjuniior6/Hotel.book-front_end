@@ -43,6 +43,8 @@ function Login() {
   })
 
   const onSubmit = async (clientData) => {
+    console.log(clientData)
+
     try {
       const { status, data } = await api.post(
         "session",

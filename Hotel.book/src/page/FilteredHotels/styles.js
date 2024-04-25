@@ -6,7 +6,7 @@ export const Container = styled.div`
   padding-top: 7rem;
   justify-items: center;
 `
-export const Empty = styled.div`
+export const EmptyBox = styled.div`
   position: absolute;
   margin-left: -2%;
   margin-top: 10%;

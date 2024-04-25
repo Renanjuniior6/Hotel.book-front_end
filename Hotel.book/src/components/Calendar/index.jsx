@@ -7,7 +7,7 @@ function Calendario() {
 
   return (
     <div className="app">
-      <h1 className="text-center">Veja uma data</h1>
+      <h1 className="text-center">Escolha uma data</h1>
       <div className="calendar-container">
         <Calendar onChange={setDate} value={date} />
       </div>

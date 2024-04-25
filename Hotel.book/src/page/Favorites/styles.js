@@ -67,7 +67,7 @@ export const Delete = styled.div`
   }
 `
 export const Empty = styled.div`
-  margin-left: 35%;
+  margin-left: 38%;
   margin-top: 10%;
 
   p {

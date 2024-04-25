@@ -6,14 +6,14 @@ export const Title = styled.p`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #19DDFA; 
+  color: #19ddfa;
 
   b {
-    color:#E75159;
+    color: #e75159;
   }
 `
 export const LoginImg = styled.img`
-    height: 71%;
+  height: 71%;
 `
 
 export const Container = styled.div`
@@ -25,7 +25,7 @@ export const Container = styled.div`
 `
 
 export const ContainerItens = styled.div`
-  background: #3F2378;
+  background: #3f2378;
   box-shadow: 0px 4px 15px rgba(74, 164, 226, 0.24);
   height: 71%;
   padding: 10px 20px;
