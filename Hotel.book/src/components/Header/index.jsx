@@ -25,56 +25,58 @@ export function Header() {
   const [modal, setModal] = useState(false)
 
   return (
-    <Container>
+    <>
       {modal === true && <Modal setModal={setModal} />}
-      <ContainerLeft>
-        <Title>
-          <b>H</b>otel.Book
-        </Title>
+      <Container>
+        <ContainerLeft>
+          <Title>
+            <b>H</b>otel.Book
+          </Title>
 
-        <Links onClick={() => navigate("/")} isActive={pathname === "/"}>
-          Home
-        </Links>
-        <Links
-          onClick={() => navigate("/hotels")}
-          isActive={pathname === "/hotels"}
-        >
-          Hotéis
-        </Links>
-      </ContainerLeft>
+          <Links onClick={() => navigate("/")} isActive={pathname === "/"}>
+            Home
+          </Links>
+          <Links
+            onClick={() => navigate("/hotels")}
+            isActive={pathname === "/hotels"}
+          >
+            Hotéis
+          </Links>
+        </ContainerLeft>
 
-      <ContainerRight>
-        <a onClick={() => navigate("/favoritos")}>
-          <div className="icon">
-            {" "}
-            <Heart size={22} weight="fill" style={{ marginRight: 10 }} />
-            Favoritos
-          </div>
-        </a>
-        <About>
-          <a>Sobre</a>
-        </About>
-
-        {userData && userData.name ? (
-          <>
-            <Border>
-              <Group>
-                <User size={23} style={{ marginRight: 10 }} />
-                <UserName>Olá, {userData.name}!</UserName>
-              </Group>
-            </Border>
-            <Logout onClick={() => setModal(true)}>Sair</Logout>
-          </>
-        ) : (
-          <ProfileButton onClick={() => navigate("/cadastro")}>
+        <ContainerRight>
+          <a onClick={() => navigate("/favoritos")}>
             <div className="icon">
               {" "}
-              <User size={20} style={{ marginRight: 10 }} />
-              Entrar
+              <Heart size={22} weight="fill" style={{ marginRight: 10 }} />
+              Favoritos
             </div>
-          </ProfileButton>
-        )}
-      </ContainerRight>
-    </Container>
+          </a>
+          <About>
+            <a href="#down">Sobre</a>
+          </About>
+
+          {userData && userData.name ? (
+            <>
+              <Border>
+                <Group>
+                  <User size={23} style={{ marginRight: 10 }} />
+                  <UserName>Olá, {userData.name}!</UserName>
+                </Group>
+              </Border>
+              <Logout onClick={() => setModal(true)}>Sair</Logout>
+            </>
+          ) : (
+            <ProfileButton onClick={() => navigate("/cadastro")}>
+              <div className="icon">
+                {" "}
+                <User size={20} style={{ marginRight: 10 }} />
+                Entrar
+              </div>
+            </ProfileButton>
+          )}
+        </ContainerRight>
+      </Container>
+    </>
   )
 }

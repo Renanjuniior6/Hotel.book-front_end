@@ -30,11 +30,13 @@ Projeto front end do Hotel.Book
 
 # Carregamento da tela de "FilteredHotels" ✔
 
-# Footer de informações em "Home"
+# Ajustes em "Calendar" ✔
 
-# Styles do Header
+# Footer de informações em "Home" ✔
 
-# Componetizar botões
+# Styles do Header ✔
+
+# Componetizar botões e de outros componentes
 
 # Links da tela de "Home"
 

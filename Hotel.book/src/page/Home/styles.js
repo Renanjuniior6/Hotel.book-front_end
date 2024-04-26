@@ -18,7 +18,7 @@ export const SearchBox = styled.form`
   align-items: center;
   background-color: #fff;
   position: absolute;
-  top: 17%;
+  top: 13%;
   left: 10%;
   height: 36.0625rem;
 `

@@ -7,7 +7,7 @@ export const Container = styled.div``
 export const Content = styled.div`
   display: flex;
   height: 70vh;
-  padding-top: 7rem;
+  padding-top: 6.25rem;
   margin-bottom: 3.125rem;
 `
 export const DetailsGroup = styled.div`

@@ -15,6 +15,7 @@ import execWoman from "../../../images/img-executive-woman.webp"
 import woman from "../../../images/img-woman-home.webp"
 import sofa from "../../../images/sofa-img.png"
 import { Button } from "../../components/Button"
+import Footer from "../../components/Footer"
 import { Header } from "../../components/Header"
 import { useUser } from "../../hooks/UserContext"
 import api from "../../services/api"
@@ -187,7 +188,7 @@ function Home() {
         </BoxBuyHotel>
       </Container3>
 
-      <Container4>
+      <Container4 id="down">
         <div className="Box1">
           <hr />
           <p>No Hotel.Book você fecha um negócio rápido.</p>
@@ -208,6 +209,7 @@ function Home() {
           </div>
         </div>
       </Container4>
+      <Footer />
     </>
   )
 }

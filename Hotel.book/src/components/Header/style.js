@@ -8,6 +8,12 @@ export const Container = styled.div`
   background: #fff;
   z-index: 100;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 5px 40px 8px 40px;
+`
+
+export const Title = styled.a`
+  font-size: 1.625rem;
+  margin-right: 4.375rem;
 
   b {
     color: #052659;
@@ -16,30 +22,37 @@ export const Container = styled.div`
   }
 `
 
-export const Title = styled.a`
-  font-size: 1.625rem;
-  margin-right: 4.375rem;
-  margin-top: 1%;
-  cursor: pointer;
-`
-
 export const ContainerLeft = styled.div`
-  margin-left: 4%;
-  margin-top: 0.625rem;
-  margin-bottom: 1rem;
   display: flex;
+  justify-content: center;
+  align-items: start;
   gap: 2.9375rem;
 `
 
 export const Links = styled.a`
-  margin-top: 4%;
+  margin-top: 3%;
   cursor: pointer;
   font-size: 1.25rem;
   font-weight: 500;
-  border-bottom: ${(props) =>
-    props.isActive ? "0.1875rem solid #052659" : "none"};
+  position: relative;
+
   &:hover {
     color: #052659;
+  }
+
+  &::after {
+    content: "";
+    height: 2px;
+    width: ${(props) => (props.isActive ? "100%" : 0)};
+    background-color: #052659;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    transition: width 0.5s ease-in-out;
+  }
+
+  &:hover::after {
+    width: 100%;
   }
 `
 
@@ -47,7 +60,6 @@ export const ContainerRight = styled.div`
   display: flex;
   gap: 10px;
   align-items: center;
-  margin-right: 4%;
 
   .icon {
     display: flex;
@@ -68,6 +80,11 @@ export const ContainerRight = styled.div`
 export const About = styled.div`
   border-left: 3px solid #052659;
   padding-left: 5px;
+
+  a {
+    text-decoration: none;
+    color: #000;
+  }
 `
 
 export const Border = styled.div`

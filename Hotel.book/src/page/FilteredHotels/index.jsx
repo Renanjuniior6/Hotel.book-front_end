@@ -5,7 +5,7 @@ import CardHotels from "../../components/CardHotels"
 import { Header } from "../../components/Header"
 import { useUser } from "../../hooks/UserContext"
 import api from "../../services/api"
-import { Container, EmptyBox } from "./styles"
+import { Container } from "./styles"
 
 function FilteredHotels() {
   const [filteredHotels, setFilteredHotels] = useState([])
@@ -46,9 +46,9 @@ function FilteredHotels() {
             <CardHotels key={item.id} hotel={item} />
           ))}
         {empty && (
-          <EmptyBox>
+          <div className="Empty">
             <p>Sem resultados para a sua busca :(</p>
-          </EmptyBox>
+          </div>
         )}
       </Container>
     </>
