@@ -13,9 +13,7 @@ import React, { useEffect, useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 
-import { Button } from "../../components/Button"
-import Calendario from "../../components/Calendar"
-import { Header } from "../../components/Header"
+import { Button, Calendario, Header } from "../../components"
 import { useFavorite } from "../../hooks/FavoriteContext"
 import api from "../../services/api"
 import { formatCurrency } from "../../utils/formatCurrency"
@@ -35,7 +33,7 @@ import {
   TotalValue,
 } from "./styles"
 
-function DetailHotel() {
+export function DetailHotel() {
   const [hotel, setHotel] = useState([])
   const [value, setValue] = useState()
   const { id } = useParams()
@@ -204,5 +202,3 @@ function DetailHotel() {
     </>
   )
 }
-
-export default DetailHotel

@@ -1,0 +1,7 @@
+export * from "./DetailHotel"
+export * from "./Favorites"
+export * from "./FilteredHotels"
+export * from "./Home"
+export * from "./Hotels"
+export * from "./Login"
+export * from "./Register"

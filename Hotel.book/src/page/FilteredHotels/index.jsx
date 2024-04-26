@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react"
 import { toast } from "react-toastify"
 
-import CardHotels from "../../components/CardHotels"
-import { Header } from "../../components/Header"
+import { Header, CardHotels } from "../../components"
 import { useUser } from "../../hooks/UserContext"
 import api from "../../services/api"
 import { Container } from "./styles"
 
-function FilteredHotels() {
+export function FilteredHotels() {
   const [filteredHotels, setFilteredHotels] = useState([])
   const [empty, setEmpty] = useState(false)
   const { SearchData } = useUser()
@@ -54,5 +53,3 @@ function FilteredHotels() {
     </>
   )
 }
-
-export default FilteredHotels

@@ -3,7 +3,7 @@ import Swiper from "swiper"
 
 import { SwiperSlide } from "./style"
 
-function Slider() {
+export function Slider() {
   return (
     <>
       <Swiper>
@@ -20,5 +20,3 @@ function Slider() {
     </>
   )
 }
-
-export default Slider

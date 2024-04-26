@@ -6,7 +6,7 @@ import { useUser } from "../../hooks/UserContext"
 import { Button } from "../Button"
 import { Container, Content, BoxButton } from "./styles"
 
-function Modal({ setModal }) {
+export function Modal({ setModal }) {
   const { logout } = useUser()
   const navigate = useNavigate()
 
@@ -31,8 +31,6 @@ function Modal({ setModal }) {
     </Container>
   )
 }
-
-export default Modal
 
 Modal.propTypes = {
   setModal: PropTypes.bool,

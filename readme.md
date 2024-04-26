@@ -36,10 +36,12 @@ Projeto front end do Hotel.Book
 
 # Styles do Header ✔
 
-# Componetizar botões e de outros componentes
+# Componetizar botões e de outros componentes ✔
 
-# Links da tela de "Home"
+# Links da tela de "Home" ✔
 
 # Mudar medidas de px para rem
+
+# Limpeza de código e estrutura
 
 # Responsividade

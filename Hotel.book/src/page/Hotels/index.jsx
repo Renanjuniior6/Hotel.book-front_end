@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react"
 import { toast } from "react-toastify"
 
-import CardHotels from "../../components/CardHotels"
-import { Header } from "../../components/Header"
+import { CardHotels, Header } from "../../components"
 import api from "../../services/api"
 import { Container } from "./styles"
 
-function Hotels() {
+export function Hotels() {
   const [hotels, setHotels] = useState([])
 
   toast.clearWaitingQueue()
@@ -32,5 +31,3 @@ function Hotels() {
     </>
   )
 }
-
-export default Hotels

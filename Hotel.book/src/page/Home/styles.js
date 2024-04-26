@@ -89,46 +89,6 @@ export const BoxPets = styled.div`
   }
 `
 
-export const ButtonSeeHotels = styled.a`
-  height: 3.125rem;
-  width: 17.6875rem;
-  font-size: 1rem;
-  margin-bottom: 1.875rem;
-  background-color: #000;
-  color: #fff;
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
-  text-align: center;
-  padding-top: 0.8rem;
-
-  &:hover {
-    opacity: 0.9;
-  }
-
-  &:active {
-    opacity: 0.7;
-  }
-`
-
-export const ButtonHowRentHotel = styled.button`
-  height: 3.125rem;
-  width: 17.6875rem;
-  background: transparent;
-  color: #000;
-  border: none;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &:hover {
-    color: #3957bd;
-  }
-`
-
 export const BoxPetsImg = styled.div`
   background-image: url(${PetImg});
   background-size: cover;

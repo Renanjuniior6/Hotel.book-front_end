@@ -14,6 +14,7 @@ export const Container = styled.div`
 export const Title = styled.a`
   font-size: 1.625rem;
   margin-right: 4.375rem;
+  cursor: pointer;
 
   b {
     color: #052659;

@@ -7,7 +7,7 @@ import { useFavorite } from "../../hooks/FavoriteContext"
 import { formatCurrency } from "../../utils/formatCurrency"
 import { Container, BoxUp, BoxDown, Paragraph, Info } from "./styles"
 
-function CardHotels({ hotel }) {
+export function CardHotels({ hotel }) {
   const { putInFavorites } = useFavorite()
 
   const navigate = useNavigate()
@@ -88,5 +88,3 @@ function CardHotels({ hotel }) {
 CardHotels.propTypes = {
   hotel: PropTypes.object,
 }
-
-export default CardHotels

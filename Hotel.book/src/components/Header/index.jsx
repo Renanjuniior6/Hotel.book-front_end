@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import { useNavigate, useLocation } from "react-router"
 
 import { useUser } from "../../hooks/UserContext"
-import Modal from "../Modal"
+import { Modal } from "../Modal"
 import {
   Container,
   Title,

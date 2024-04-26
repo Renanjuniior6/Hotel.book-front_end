@@ -1,11 +1,5 @@
 import { yupResolver } from "@hookform/resolvers/yup"
-import {
-  MapPin,
-  Money,
-  Bed,
-  ArrowRight,
-  Lightning,
-} from "@phosphor-icons/react"
+import { MapPin, Money, Bed, Lightning } from "@phosphor-icons/react"
 import React, { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router"
@@ -14,9 +8,13 @@ import * as Yup from "yup"
 import execWoman from "../../../images/img-executive-woman.webp"
 import woman from "../../../images/img-woman-home.webp"
 import sofa from "../../../images/sofa-img.png"
-import { Button } from "../../components/Button"
-import Footer from "../../components/Footer"
-import { Header } from "../../components/Header"
+import {
+  Button,
+  Footer,
+  Header,
+  HoWRentButton,
+  RentButton,
+} from "../../components"
 import { useUser } from "../../hooks/UserContext"
 import api from "../../services/api"
 import { formatCurrency } from "../../utils/formatCurrency"
@@ -28,8 +26,6 @@ import {
   Container2,
   BoxPetsImg,
   BoxPets,
-  ButtonSeeHotels,
-  ButtonHowRentHotel,
   BoxImage,
   BoxBuyHotel,
   Container3,
@@ -37,7 +33,7 @@ import {
   Icon,
 } from "./styles"
 
-function Home() {
+export function Home() {
   const { setSearchData } = useUser()
   const navigate = useNavigate()
   const [city, setCity] = useState()
@@ -132,13 +128,8 @@ function Home() {
               Selecione os imóveis do seu jeito, agende visitas online, negocie
               sem intermédios e assine o contrato digitalmente
             </p>
-            <ButtonSeeHotels onClick={() => navigate("/hotels")}>
-              Ver imóveis para alugar
-            </ButtonSeeHotels>
-            <ButtonHowRentHotel>
-              Como alugar no Hotel.Book{" "}
-              <ArrowRight size={20} style={{ marginLeft: 10 }} />
-            </ButtonHowRentHotel>
+            <RentButton>Ver imóveis para alugar</RentButton>
+            <HoWRentButton>Como alugar no Hotel.Book </HoWRentButton>
           </div>
           <img src={sofa} />
         </BoxPets>
@@ -149,10 +140,7 @@ function Home() {
               Pet também é família Imóveis para você levar toda sua família com
               você
             </p>
-            <ButtonHowRentHotel>
-              Ver imóveis para alugar{" "}
-              <ArrowRight size={20} style={{ marginLeft: 30 }} />
-            </ButtonHowRentHotel>
+            <HoWRentButton>Ver imóveis para alugar </HoWRentButton>
           </div>
         </BoxPetsImg>
       </Container2>
@@ -164,10 +152,7 @@ function Home() {
             <p>
               Imóveis com luz natural e que recebem aquele sol gostoso de manhã
             </p>
-            <ButtonHowRentHotel>
-              Ver imóveis para comprar{" "}
-              <ArrowRight size={20} style={{ marginLeft: 30 }} />
-            </ButtonHowRentHotel>
+            <HoWRentButton>Ver imóveis para comprar </HoWRentButton>
           </div>
         </BoxImage>
         <BoxBuyHotel>
@@ -178,11 +163,8 @@ function Home() {
               financiamento e tirar todas as suas dúvidas durante todo o
               processo.
             </p>
-            <ButtonSeeHotels>Ver imóveis para comprar</ButtonSeeHotels>
-            <ButtonHowRentHotel>
-              Como comprar no Hotel.Book{" "}
-              <ArrowRight size={20} style={{ marginLeft: 18 }} />
-            </ButtonHowRentHotel>
+            <RentButton>Ver imóveis para comprar</RentButton>
+            <HoWRentButton>Como comprar no Hotel.Book </HoWRentButton>
           </div>
           <img src={woman} />
         </BoxBuyHotel>
@@ -202,9 +184,7 @@ function Home() {
           </div>
 
           <div className="LearnMore">
-            <ButtonHowRentHotel>
-              Saiba Mais <ArrowRight size={20} style={{ marginLeft: 10 }} />
-            </ButtonHowRentHotel>
+            <HoWRentButton>Saiba Mais</HoWRentButton>
             <img src={execWoman} />
           </div>
         </div>
@@ -213,5 +193,3 @@ function Home() {
     </>
   )
 }
-
-export default Home

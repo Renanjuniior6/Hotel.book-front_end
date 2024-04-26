@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import Calendar from "react-calendar"
 import "./style.css"
 
-function Calendario() {
+export function Calendario() {
   const [date, setDate] = useState()
 
   return (
@@ -18,5 +18,3 @@ function Calendario() {
     </div>
   )
 }
-
-export default Calendario

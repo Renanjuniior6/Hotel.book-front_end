@@ -2,7 +2,7 @@ import React from "react"
 
 import { Container, Logo, Text, Rights } from "./styles"
 
-function Footer() {
+export function Footer() {
   return (
     <Container>
       <Logo>
@@ -20,5 +20,3 @@ function Footer() {
     </Container>
   )
 }
-
-export default Footer

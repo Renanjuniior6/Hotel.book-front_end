@@ -2,7 +2,7 @@ import { MapPin, HeartStraight } from "@phosphor-icons/react"
 import React from "react"
 import { useNavigate } from "react-router-dom"
 
-import { Header } from "../../components/Header"
+import { Header } from "../../components"
 import { useFavorite } from "../../hooks/FavoriteContext"
 import { formatCurrency } from "../../utils/formatCurrency"
 import {
@@ -16,7 +16,7 @@ import {
   Empty,
 } from "./styles"
 
-function Favorites() {
+export function Favorites() {
   const { favoriteHotels, removeFavorite } = useFavorite()
 
   const navigate = useNavigate()
@@ -68,5 +68,3 @@ function Favorites() {
     </>
   )
 }
-
-export default Favorites

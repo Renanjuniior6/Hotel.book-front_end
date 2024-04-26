@@ -20,7 +20,7 @@ import {
   Title,
 } from "./style"
 
-function Login() {
+export function Login() {
   const { putUserData } = useUser()
 
   const navigate = useNavigate()
@@ -110,5 +110,3 @@ function Login() {
     </Container>
   )
 }
-
-export default Login
