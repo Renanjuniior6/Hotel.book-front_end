@@ -18,6 +18,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
+  border-radius: 3px;
 
   p {
     text-align: center;
