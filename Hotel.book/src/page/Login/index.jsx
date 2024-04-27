@@ -5,7 +5,8 @@ import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 import * as Yup from "yup"
 
-import Logo from "../../../images/Tela de login.jpg"
+import LogoImg from "../../../images/login-image.jpg"
+import { Logo } from "../../components/Logo"
 import { useUser } from "../../hooks/UserContext"
 import api from "../../services/api"
 import {
@@ -17,7 +18,6 @@ import {
   Label,
   LoginImg,
   SignLink,
-  Title,
 } from "./style"
 
 export function Login() {
@@ -74,13 +74,10 @@ export function Login() {
 
   return (
     <Container>
-      <LoginImg src={Logo} />
+      <LoginImg src={LogoImg} />
 
       <ContainerItens>
-        <Title>
-          <b>H</b>otel.Book
-        </Title>
-
+        <Logo styles="true" />
         <h1>Welcome !</h1>
 
         <form noValidate onSubmit={handleSubmit(onSubmit)}>

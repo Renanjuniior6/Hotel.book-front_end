@@ -8,8 +8,6 @@ Projeto front end do Hotel.Book
 
 # Remover o Header de Login e Cadastro ✔
 
-# Estilização da tela de login e cadastro
-
 # Ajuste no Header (nome de usuário logado) ✔
 
 # logout do usuário (modal de aviso) ✔
@@ -39,6 +37,8 @@ Projeto front end do Hotel.Book
 # Componetizar botões e de outros componentes ✔
 
 # Links da tela de "Home" ✔
+
+# Estilização da tela de login e cadastro
 
 # Mudar medidas de px para rem
 

@@ -3,10 +3,10 @@ import React, { useState } from "react"
 import { useNavigate, useLocation } from "react-router"
 
 import { useUser } from "../../hooks/UserContext"
+import { Logo } from "../Logo"
 import { Modal } from "../Modal"
 import {
   Container,
-  Title,
   ContainerLeft,
   ContainerRight,
   Links,
@@ -29,16 +29,13 @@ export function Header() {
       {modal === true && <Modal setModal={setModal} />}
       <Container>
         <ContainerLeft>
-          <Title>
-            <b>H</b>otel.Book
-          </Title>
-
-          <Links onClick={() => navigate("/")} isActive={pathname === "/"}>
+          <Logo />
+          <Links onClick={() => navigate("/")} isactive={pathname === "/"}>
             Home
           </Links>
           <Links
             onClick={() => navigate("/hotels")}
-            isActive={pathname === "/hotels"}
+            isactive={pathname === "/hotels"}
           >
             Hotéis
           </Links>

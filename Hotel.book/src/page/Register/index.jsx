@@ -4,9 +4,10 @@ import { useForm } from "react-hook-form"
 import { Link, useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 import * as Yup from "yup"
-// import Logo from "../../../images/cadastro.jpg"
 
+import image from "../../../images/login-image.jpg"
 import { Button } from "../../components"
+import { Logo } from "../../components/Logo"
 import api from "../../services/api"
 import {
   Container,
@@ -15,16 +16,18 @@ import {
   Label,
   ErrorMessage,
   SignLink,
+  Image,
+  Content,
 } from "./style"
 
 export function Register() {
   const schema = Yup.object().shape({
-    name: Yup.string().required("Seu nome é obrigatorio"),
+    name: Yup.string().required("Seu nome é obrigatório"),
     email: Yup.string()
       .email("Digite um email válido")
-      .required("O seu email é obrigatorio"),
+      .required("O seu email é obrigatório"),
     password: Yup.string()
-      .required("A senha é obrigatoria")
+      .required("A senha é obrigatória")
       .min(6, "A senha deve ter no minimo 6 dígitos"),
     confirmPassword: Yup.string()
       .required("A senha é obrigatoria")
@@ -71,54 +74,54 @@ export function Register() {
 
   return (
     <Container>
-      <ContainerItens>
-        <h1>Faça sua conta!</h1>
+      <h1>Entre ou faça o cadastro</h1>
+      <Content>
+        <Image src={image} />
+        <ContainerItens>
+          <form noValidate onSubmit={handleSubmit(onSubmit)}>
+            <Logo styles="true" />
+            <Label error={errors.name?.message}>Nome</Label>
+            <Input
+              type="text"
+              {...register("name")}
+              error={errors.name?.message}
+            />
+            <ErrorMessage>{errors.name?.message}</ErrorMessage>
 
-        <form noValidate onSubmit={handleSubmit(onSubmit)}>
-          <Label error={errors.name?.message}>Nome</Label>
-          <Input
-            type="text"
-            {...register("name")}
-            error={errors.name?.message}
-          />
-          <ErrorMessage>{errors.name?.message}</ErrorMessage>
+            <Label error={errors.email?.message}>Email</Label>
+            <Input
+              type="email"
+              {...register("email")}
+              error={errors.email?.message}
+            />
+            <ErrorMessage>{errors.email?.message}</ErrorMessage>
 
-          <Label error={errors.email?.message}>Email</Label>
-          <Input
-            type="email"
-            {...register("email")}
-            error={errors.email?.message}
-          />
-          <ErrorMessage>{errors.email?.message}</ErrorMessage>
+            <Label error={errors.password?.message}>Senha</Label>
+            <Input
+              type="password"
+              {...register("password")}
+              error={errors.password?.message}
+            />
+            <ErrorMessage>{errors.password?.message}</ErrorMessage>
 
-          <Label error={errors.password?.message}>Senha</Label>
-          <Input
-            type="password"
-            {...register("password")}
-            error={errors.password?.message}
-          />
-          <ErrorMessage>{errors.password?.message}</ErrorMessage>
+            <Label error={errors.confirmPassword?.message}>
+              Confirme sua senha
+            </Label>
+            <Input
+              type="password"
+              {...register("confirmPassword")}
+              error={errors.confirmPassword?.message}
+            />
+            <ErrorMessage>{errors.confirmPassword?.message}</ErrorMessage>
 
-          <Label error={errors.confirmPassword?.message}>
-            Confirme sua senha
-          </Label>
-          <Input
-            type="password"
-            {...register("confirmPassword")}
-            error={errors.confirmPassword?.message}
-          />
-          <ErrorMessage>{errors.confirmPassword?.message}</ErrorMessage>
+            <Button type="submit">Cadastrar</Button>
+          </form>
 
-          <Button type="submit">Cadastrar</Button>
-        </form>
-
-        <SignLink>
-          Já tem conta?{" "}
-          <Link style={{ color: "#ffff" }} to="/login">
-            Entrar
-          </Link>{" "}
-        </SignLink>
-      </ContainerItens>
+          <SignLink>
+            Já tem conta? <Link to="/login">Entrar</Link>{" "}
+          </SignLink>
+        </ContainerItens>
+      </Content>
     </Container>
   )
 }

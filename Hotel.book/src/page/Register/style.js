@@ -1,46 +1,91 @@
 import styled from "styled-components"
 
-export const Container = styled.div``
+import foto from "../../../images/cadastro.jpg"
+
+export const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url(${foto});
+  background-size: cover;
+  background-position: center;
+
+  h1 {
+    position: absolute;
+    font-size: 29px;
+    z-index: 999;
+    top: 100px;
+    left: 23%;
+    color: #fff;
+  }
+`
+
+export const Content = styled.div`
+  display: flex;
+  justify-content: center;
+  height: 570px;
+  width: 950px;
+  position: relative;
+`
 
 export const ContainerItens = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
+  background-color: #052659;
+  padding: 20px;
+  width: 47%;
+
+  button {
+    background-color: rgba(25, 221, 250, 0.5);
+    color: #fff;
+    font-weight: 600;
+    margin-top: 20px;
+    border-radius: 5px;
+    width: 40%;
+  }
+`
+
+export const Image = styled.img`
+  width: 40%;
+  height: 100%;
 `
 
 export const Label = styled.p`
-  font-style: normal;
-  font-weight: 700;
-  font-size: 21px;
+  font-weight: 500;
+  font-size: 15px;
+  color: #fff;
   line-height: 14px;
-  color: #eed519;
   margin-top: ${(props) => (props.error ? "12px" : "20px")};
-  margin-bottom: 33px;
+  margin-bottom: 10px;
 `
 
 export const Input = styled.input`
-  width: 27rem;
-  height: 3rem;
-  color: #ffff;
-  background: #007cc2;
-  box-shadow: 3px 3px 10px rgba(74, 144, 226, 0.19);
-  border-radius: 16px;
-  border: ${(props) => (props.error ? "2px solid #CC1717" : "none")};
-  padding-left: 10px;
+  width: 100%;
+  height: 30px;
+  background: #fff;
+  border-radius: 3px;
+  border: ${(props) => (props.error ? "3px solid #CC1717" : "none")};
+  padding-left: 5px;
 `
 
 export const SignLink = styled.a`
-  font-style: normal;
+  position: absolute;
+  bottom: 20px;
   font-weight: 500;
   font-size: 14px;
   margin-top: 30px;
   line-height: 16px;
-  color: #eed519;
+  color: #fff;
 
   a {
     cursor: pointer;
     text-decoration: underline;
+    color: #fff;
+
+    &:hover {
+      color: rgba(25, 221, 250, 0.5);
+    }
   }
 `
 
@@ -50,5 +95,5 @@ export const ErrorMessage = styled.p`
   font-size: 14px;
   line-height: 16px;
   color: #cc1717;
-  margin-top: 2px;
+  margin-top: 9px;
 `

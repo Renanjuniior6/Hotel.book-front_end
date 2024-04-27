@@ -11,18 +11,6 @@ export const Container = styled.div`
   padding: 5px 40px 8px 40px;
 `
 
-export const Title = styled.a`
-  font-size: 1.625rem;
-  margin-right: 4.375rem;
-  cursor: pointer;
-
-  b {
-    color: #052659;
-    font-size: 2.1875rem;
-    font-weight: 800;
-  }
-`
-
 export const ContainerLeft = styled.div`
   display: flex;
   justify-content: center;
@@ -44,7 +32,7 @@ export const Links = styled.a`
   &::after {
     content: "";
     height: 2px;
-    width: ${(props) => (props.isActive ? "100%" : 0)};
+    width: ${(props) => (props.isactive ? "100%" : 0)};
     background-color: #052659;
     position: absolute;
     bottom: -3px;
