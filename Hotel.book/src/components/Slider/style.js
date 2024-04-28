@@ -1,3 +1,11 @@
 import styled from "styled-components"
 
-export const SwiperSlide = styled.div``
+export const Container = styled.div`
+  width: 40%;
+  height: 100%;
+
+  img {
+    width: 500px;
+    height: 600px;
+  }
+`

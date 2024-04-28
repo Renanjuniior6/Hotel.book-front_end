@@ -38,7 +38,7 @@ Projeto front end do Hotel.Book
 
 # Links da tela de "Home" ✔
 
-# Estilização da tela de login e cadastro
+# Estilização da tela de login e cadastro ✔
 
 # Mudar medidas de px para rem
 

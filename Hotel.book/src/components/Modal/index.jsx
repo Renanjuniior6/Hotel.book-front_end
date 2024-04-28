@@ -22,10 +22,10 @@ export function Modal({ setModal }) {
           Tem certeza que deseja sair? Você perderá todos os dados da sua conta
         </p>
         <BoxButton>
+          <Button onClick={() => setModal(false)}>Não</Button>
           <Button className="btn" onClick={() => logoutUser()}>
             Sim
           </Button>
-          <Button onClick={() => setModal(false)}>Não</Button>
         </BoxButton>
       </Content>
     </Container>

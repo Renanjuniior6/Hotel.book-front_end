@@ -1,104 +1,85 @@
 import styled from "styled-components"
 
-export const Title = styled.p`
-  font-size: 26px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #19ddfa;
-
-  b {
-    color: #e75159;
-  }
-`
-export const LoginImg = styled.img`
-  height: 71%;
-`
+import foto from "../../../images/Imagem-Home-hotel.jpg"
 
 export const Container = styled.div`
-  height: 100vh;
-  width: 100vw;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url(${foto});
+  background-size: cover;
+  background-position: center;
+
+  h1 {
+    font-size: 29px;
+    color: #fff;
+    margin-left: 29%;
+    margin-top: 30px;
+  }
+`
+
+export const Content = styled.div`
+  display: flex;
+  justify-content: center;
+  height: 600px;
+  width: 950px;
+  position: relative;
+  border-radius: 5px;
 `
 
 export const ContainerItens = styled.div`
-  background: #3f2378;
-  box-shadow: 0px 4px 15px rgba(74, 164, 226, 0.24);
-  height: 71%;
-  padding: 10px 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  background-color: #052659;
+  padding: 20px;
+  width: 47%;
 
-  h1 {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 28px;
-    color: #ffff;
-    margin-bottom: 10px;
-    text-align: center;
-    margin-top: 50px;
+  button {
+    background-color: rgba(25, 221, 250, 0.5);
+    color: #fff;
+    font-weight: 600;
+    margin-top: 20px;
+    border-radius: 5px;
+    width: 40%;
   }
 `
 
 export const Label = styled.p`
-  font-style: normal;
   font-weight: 500;
-  font-size: 12px;
-  line-height: 14px;
+  font-size: 15px;
   color: #fff;
-  margin-top: 28px;
-  margin-bottom: 5px;
+  line-height: 14px;
+  margin-top: ${(props) => (props.error ? "12px" : "20px")};
+  margin-bottom: 10px;
 `
 
 export const Input = styled.input`
-  width: 391.42px;
-  height: 38.52px;
-  background: #ffff;
-  box-shadow: 3px 3px 10px rgba(74, 144, 226, 0.19);
-  border-radius: 5px;
-  border: none;
-  padding-left: 10px;
-`
-
-export const Button = styled.button`
-  width: 182.81px;
-  height: 56.53px;
-  background: #235396;
-  border-radius: 28px;
-  border: none;
-  cursor: pointer;
-  margin-top: 50px;
-  margin-bottom: 25px;
-  font-style: 500;
-  font-size: 16px;
-  line-height: 19px;
-  text-align: center;
-  color: #ffff;
-
-  &:hover {
-    opacity: 0.8;
-  }
-
-  &:active {
-    opacity: 0.6;
-  }
+  width: 100%;
+  height: 30px;
+  background: #fff;
+  border-radius: 3px;
+  border: ${(props) => (props.error ? "3px solid #CC1717" : "none")};
+  padding-left: 5px;
 `
 
 export const SignLink = styled.a`
-  font-style: normal;
-  font-weight: normal;
+  position: absolute;
+  bottom: 20px;
+  font-weight: 500;
   font-size: 14px;
+  margin-top: 30px;
   line-height: 16px;
-  color: #ffff;
+  color: #fff;
 
   a {
     cursor: pointer;
     text-decoration: underline;
+    color: #fff;
+
+    &:hover {
+      color: rgba(25, 221, 250, 0.5);
+    }
   }
 `
 
@@ -108,5 +89,5 @@ export const ErrorMessage = styled.p`
   font-size: 14px;
   line-height: 16px;
   color: #cc1717;
-  margin-top: 2px;
+  margin-top: 9px;
 `

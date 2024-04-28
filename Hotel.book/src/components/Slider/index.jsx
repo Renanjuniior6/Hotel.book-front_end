@@ -1,22 +1,45 @@
 import React from "react"
-import Swiper from "swiper"
+import { Autoplay, Pagination } from "swiper/modules"
+import { Swiper, SwiperSlide } from "swiper/react"
 
-import { SwiperSlide } from "./style"
+import "swiper/css"
+import "swiper/css/pagination"
+import hotel1 from "../../../images/ht-1.jpeg"
+import hotel2 from "../../../images/ht-3.jpeg"
+import hotel3 from "../../../images/ht19.jpeg"
+import hotel4 from "../../../images/ht20.jpeg"
+import { Container } from "./style"
 
 export function Slider() {
   return (
-    <>
-      <Swiper>
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+    <Container>
+      <Swiper
+        spaceBetween={10}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: false,
+        }}
+        navigation={false}
+        modules={[Autoplay, Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <img src={hotel1} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={hotel2} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={hotel3} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={hotel4} />
+        </SwiperSlide>
       </Swiper>
-    </>
+    </Container>
   )
 }

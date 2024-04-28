@@ -10,23 +10,15 @@ export const Container = styled.div`
   background-image: url(${foto});
   background-size: cover;
   background-position: center;
-
-  h1 {
-    position: absolute;
-    font-size: 29px;
-    z-index: 999;
-    top: 100px;
-    left: 23%;
-    color: #fff;
-  }
 `
 
 export const Content = styled.div`
   display: flex;
   justify-content: center;
-  height: 570px;
+  height: 600px;
   width: 950px;
   position: relative;
+  border-radius: 5px;
 `
 
 export const ContainerItens = styled.div`
@@ -40,15 +32,10 @@ export const ContainerItens = styled.div`
     background-color: rgba(25, 221, 250, 0.5);
     color: #fff;
     font-weight: 600;
-    margin-top: 20px;
+    margin-top: 1.25rem;
     border-radius: 5px;
     width: 40%;
   }
-`
-
-export const Image = styled.img`
-  width: 40%;
-  height: 100%;
 `
 
 export const Label = styled.p`

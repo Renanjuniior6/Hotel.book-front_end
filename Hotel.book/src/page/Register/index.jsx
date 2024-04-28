@@ -5,9 +5,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 import * as Yup from "yup"
 
-import image from "../../../images/login-image.jpg"
-import { Button } from "../../components"
-import { Logo } from "../../components/Logo"
+import { Slider, Button, Logo } from "../../components"
 import api from "../../services/api"
 import {
   Container,
@@ -16,7 +14,6 @@ import {
   Label,
   ErrorMessage,
   SignLink,
-  Image,
   Content,
 } from "./style"
 
@@ -74,9 +71,8 @@ export function Register() {
 
   return (
     <Container>
-      <h1>Entre ou faça o cadastro</h1>
       <Content>
-        <Image src={image} />
+        <Slider />
         <ContainerItens>
           <form noValidate onSubmit={handleSubmit(onSubmit)}>
             <Logo styles="true" />

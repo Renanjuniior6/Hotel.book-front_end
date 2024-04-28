@@ -1,23 +1,21 @@
 import { yupResolver } from "@hookform/resolvers/yup"
 import React from "react"
 import { useForm } from "react-hook-form"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 import { toast } from "react-toastify"
 import * as Yup from "yup"
 
-import LogoImg from "../../../images/login-image.jpg"
-import { Logo } from "../../components/Logo"
+import { Button, Logo, Slider } from "../../components"
 import { useUser } from "../../hooks/UserContext"
 import api from "../../services/api"
 import {
-  Button,
   Container,
   ContainerItens,
   ErrorMessage,
   Input,
   Label,
-  LoginImg,
   SignLink,
+  Content,
 } from "./style"
 
 export function Login() {
@@ -74,36 +72,36 @@ export function Login() {
 
   return (
     <Container>
-      <LoginImg src={LogoImg} />
+      <Content>
+        <Slider />
+        <ContainerItens>
+          <form noValidate onSubmit={handleSubmit(onSubmit)}>
+            <Logo styles="true" />
+            <h1>Bem vindo !</h1>
+            <Label>Email</Label>
+            <Input
+              type="email"
+              {...register("email")}
+              error={errors.email?.message}
+            />
+            <ErrorMessage>{errors.email?.message}</ErrorMessage>
 
-      <ContainerItens>
-        <Logo styles="true" />
-        <h1>Welcome !</h1>
+            <Label>Senha</Label>
+            <Input
+              type="password"
+              {...register("password")}
+              error={errors.password?.message}
+            />
+            <ErrorMessage>{errors.password?.message}</ErrorMessage>
 
-        <form noValidate onSubmit={handleSubmit(onSubmit)}>
-          <Label>Email</Label>
-          <Input
-            type="email"
-            {...register("email")}
-            error={errors.email?.message}
-          />
-          <ErrorMessage>{errors.email?.message}</ErrorMessage>
+            <Button type="submit">Entrar</Button>
+          </form>
 
-          <Label>Senha</Label>
-          <Input
-            type="password"
-            {...register("password")}
-            error={errors.password?.message}
-          />
-          <ErrorMessage>{errors.password?.message}</ErrorMessage>
-
-          <Button type="submit">Entrar</Button>
-        </form>
-
-        <SignLink>
-          Não tem conta? <a>Sign up</a>{" "}
-        </SignLink>
-      </ContainerItens>
+          <SignLink>
+            Não tem conta? <Link to={"/cadastro"}>Cadastre-se</Link>{" "}
+          </SignLink>
+        </ContainerItens>
+      </Content>
     </Container>
   )
 }
