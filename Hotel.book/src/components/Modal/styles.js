@@ -12,22 +12,22 @@ export const Container = styled.div`
 `
 export const Content = styled.div`
   background-color: #fff;
-  width: 430px;
+  width: 26.875rem;
   position: fixed;
-  padding: 40px;
+  padding: 2.5rem;
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  border-radius: 3px;
+  gap: 2.5rem;
+  border-radius: 0.1875rem;
 
   p {
     text-align: center;
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 `
 export const BoxButton = styled.div`
   display: flex;
-  gap: 40px;
+  gap: 2.5rem;
 
   .btn {
     opacity: 0.8;
@@ -38,6 +38,6 @@ export const BoxButton = styled.div`
   }
 
   button {
-    border-radius: 3px;
+    border-radius: 0.1875rem;
   }
 `

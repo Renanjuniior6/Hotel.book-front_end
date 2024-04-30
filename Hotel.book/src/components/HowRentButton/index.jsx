@@ -9,7 +9,7 @@ export function HoWRentButton({ children, ...rest }) {
   const navigate = useNavigate()
   return (
     <Container onClick={() => navigate("/hotels")} {...rest}>
-      {children} <ArrowRight size={20} style={{ marginLeft: 10 }} />
+      {children} <ArrowRight size={20} style={{ marginLeft: "0.625rem" }} />
     </Container>
   )
 }

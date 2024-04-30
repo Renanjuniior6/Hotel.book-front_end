@@ -1,7 +1,7 @@
 .app {
-  border-radius: 5px;
+  border-radius:  0.3125rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  padding: 20px;
+  padding: 1.25rem;
 }
 
 .react-calendar {
@@ -10,14 +10,14 @@
   background-color: #fff;
   color: #222;
   line-height: 1.125em;
-  margin: 10px 0 30px 0;
+  margin: 0.625rem 0 1.875rem 0;
 }
 
 .react-calendar__tile {
   border-right-width: 0px;
-  border-left-width: 1px;
+  border-left-width: 0.0625rem;
   border-top-width: 0px;
-  border-bottom-width: 1px;
+  border-bottom-width: 0.0625rem;
 }
 
 .react-calendar__month-view__days {
@@ -31,10 +31,10 @@
 
 .react-calendar__navigation button {
   color: #000;
-  min-width: 44px;
-  font-size: 17px;
-  margin: 0 0 10px 0;
-  padding: 0 10px 0 10px;
+  min-width: 2.75rem;
+  font-size: 1.0625rem;
+  margin: 0 0 0.625rem 0;
+  padding: 0 0.625rem 0 0.625rem;
 }
 
 .react-calendar__navigation {

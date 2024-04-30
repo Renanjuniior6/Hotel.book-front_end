@@ -10,22 +10,28 @@ export const Container = styled.div`
   background-image: url(${foto});
   background-size: cover;
   background-position: center;
+
+  h1 {
+    font-size: 1.625rem;
+    color: #fff;
+    margin-left: 29%;
+  }
 `
 
 export const Content = styled.div`
   display: flex;
   justify-content: center;
-  height: 600px;
-  width: 950px;
+  height: 37.5rem;
+  width: 59.375rem;
   position: relative;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
 `
 
 export const ContainerItens = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #052659;
-  padding: 20px;
+  padding: 1.25rem;
   width: 47%;
 
   button {
@@ -33,36 +39,36 @@ export const ContainerItens = styled.div`
     color: #fff;
     font-weight: 600;
     margin-top: 1.25rem;
-    border-radius: 5px;
+    border-radius: 0.3125rem;
     width: 40%;
   }
 `
 
 export const Label = styled.p`
   font-weight: 500;
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: #fff;
-  line-height: 14px;
-  margin-top: ${(props) => (props.error ? "12px" : "20px")};
-  margin-bottom: 10px;
+  line-height: 0.875rem;
+  margin-top: ${(props) => (props.error ? "0.75rem" : "1.25rem")};
+  margin-bottom: 0.625rem;
 `
 
 export const Input = styled.input`
   width: 100%;
-  height: 30px;
+  height: 1.875rem;
   background: #fff;
-  border-radius: 3px;
+  border-radius: 0.1875rem;
   border: ${(props) => (props.error ? "3px solid #CC1717" : "none")};
-  padding-left: 5px;
+  padding-left: 0.3125rem;
 `
 
 export const SignLink = styled.a`
   position: absolute;
-  bottom: 20px;
+  bottom: 1.25rem;
   font-weight: 500;
-  font-size: 14px;
-  margin-top: 30px;
-  line-height: 16px;
+  font-size: 0.875rem;
+  margin-top: 1.875rem;
+  line-height: 1rem;
   color: #fff;
 
   a {
@@ -79,8 +85,8 @@ export const SignLink = styled.a`
 export const ErrorMessage = styled.p`
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 0.875rem;
+  line-height: 1rem;
   color: #cc1717;
-  margin-top: 9px;
+  margin-top: 0.5625rem;
 `

@@ -8,7 +8,7 @@ export const Container = styled.div`
   background: #fff;
   z-index: 100;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  padding: 5px 40px 8px 40px;
+  padding: 0.3125rem 2.5rem 0.5rem 2.5rem;
 `
 
 export const ContainerLeft = styled.div`
@@ -31,7 +31,7 @@ export const Links = styled.a`
 
   &::after {
     content: "";
-    height: 2px;
+    height: 0.125rem;
     width: ${(props) => (props.isactive ? "100%" : 0)};
     background-color: #052659;
     position: absolute;
@@ -47,7 +47,7 @@ export const Links = styled.a`
 
 export const ContainerRight = styled.div`
   display: flex;
-  gap: 10px;
+  gap: 0.625rem;
   align-items: center;
 
   .icon {
@@ -67,8 +67,8 @@ export const ContainerRight = styled.div`
 `
 
 export const About = styled.div`
-  border-left: 3px solid #052659;
-  padding-left: 5px;
+  border-left: 0.1875rem solid #052659;
+  padding-left: 0.3125rem;
 
   a {
     text-decoration: none;
@@ -77,20 +77,20 @@ export const About = styled.div`
 `
 
 export const Border = styled.div`
-  border-right: 3px solid #052659;
-  border-left: 3px solid #052659;
+  border-right: 0.1875rem solid #052659;
+  border-left: 0.1875rem solid #052659;
 `
 
 export const Group = styled.div`
   display: flex;
-  margin-right: 10px;
-  margin-left: 10px;
+  margin-right: 0.625rem;
+  margin-left: 0.625rem;
 `
 
 export const UserName = styled.p``
 
 export const Logout = styled.p`
-  margin-left: 5px;
+  margin-left: 0.3125rem;
   cursor: pointer;
 
   &:hover {

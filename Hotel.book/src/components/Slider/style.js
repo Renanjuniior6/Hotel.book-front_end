@@ -5,7 +5,7 @@ export const Container = styled.div`
   height: 100%;
 
   img {
-    width: 500px;
-    height: 600px;
+    width: 31.25rem;
+    height: 37.5rem;
   }
 `

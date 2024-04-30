@@ -76,6 +76,7 @@ export function Register() {
         <ContainerItens>
           <form noValidate onSubmit={handleSubmit(onSubmit)}>
             <Logo styles="true" />
+            <h1>Cadastre-se</h1>
             <Label error={errors.name?.message}>Nome</Label>
             <Input
               type="text"

@@ -8,25 +8,25 @@ export const Container = styled.div`
   align-items: center;
 
   hr {
-    margin: 30px 0 20px 0;
+    margin: 1.875rem 0 1.25rem 0;
     width: 90%;
   }
 `
 export const Logo = styled.div`
-  font-size: 40px;
-  padding-top: 20px;
-  margin-bottom: 10px;
+  font-size: 2.5rem;
+  padding-top: 1.25rem;
+  margin-bottom: 0.625rem;
 
   b {
     color: #052659;
-    font-size: 50px;
+    font-size: 3.125rem;
     font-weight: 800;
   }
 `
 export const Text = styled.p`
-  width: 550px;
+  width: 34.375rem;
   text-align: center;
 `
 export const Rights = styled.p`
-  margin-bottom: 30px;
+  margin-bottom: 1.875rem;
 `

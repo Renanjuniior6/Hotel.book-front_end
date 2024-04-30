@@ -45,7 +45,11 @@ export function Header() {
           <a onClick={() => navigate("/favoritos")}>
             <div className="icon">
               {" "}
-              <Heart size={22} weight="fill" style={{ marginRight: 10 }} />
+              <Heart
+                size={22}
+                weight="fill"
+                style={{ marginRight: "0.625rem" }}
+              />
               Favoritos
             </div>
           </a>
@@ -57,7 +61,7 @@ export function Header() {
             <>
               <Border>
                 <Group>
-                  <User size={23} style={{ marginRight: 10 }} />
+                  <User size={23} style={{ marginRight: "0.625rem" }} />
                   <UserName>Olá, {userData.name}!</UserName>
                 </Group>
               </Border>
@@ -67,7 +71,7 @@ export function Header() {
             <ProfileButton onClick={() => navigate("/cadastro")}>
               <div className="icon">
                 {" "}
-                <User size={20} style={{ marginRight: 10 }} />
+                <User size={20} style={{ marginRight: "0.625rem" }} />
                 Entrar
               </div>
             </ProfileButton>
