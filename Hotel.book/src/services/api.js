@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const apiHotelBook = axios.create({
-  baseURL: "http://localhost:3001",
+  baseURL: "https://hotelbook-backend-production.up.railway.app",
 })
 
 apiHotelBook.interceptors.request.use(async (config) => {
