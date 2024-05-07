@@ -9,7 +9,7 @@ import {
   Hotels,
   Login,
   Register,
-} from "../Page"
+} from "../page"
 import PrivateRoutes from "./private-routes"
 
 function Router() {
