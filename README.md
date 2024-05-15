@@ -6,11 +6,11 @@
 ## Índices
 - [Funcionalidades](#funcionalidades)
 - [Layout](#layout)
-- [Demonstração](#demonstração)
-- [Como rodar o projeto](#rodar)
-- [Tecnologias Utilizadas](#tecnologias)
-- [Pessoas Autoras](#autoras)
-- [Próximos Passos](#passos)
+- [Demonstração](#link-demonstração)
+- [Como rodar o projeto](#como-rodar-o-projeto)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Pessoas Autoras](#pessoas-autoras)
+- [Próximos Passos](#próximos-passos)
 
 ## Funcionalidades
 - Busca com filtro de hotéis; 
@@ -48,5 +48,24 @@
 
 ## [Link demonstração](https://hotel-book-front-end.vercel.app/)
 
+## Como rodar o projeto
+```bash
+# Clone este respositório
+$ git clone [URL]
 
+# Acesse a pasta do projeto no seu terminal
+$ cd Hotel.book
 
+# Instale as dependências
+$ yarn install
+
+# Execute a aplicação
+$ yarn dev
+
+# A aplicação será iniciada na porta 5173, acesse pelo navegador: http://localhost:5173
+```
+## Tecnologias Utilizadas
+- [X] React
+- [X] Vite
+- [X] Styled-Components
+- [X] React-Router-Dom 
