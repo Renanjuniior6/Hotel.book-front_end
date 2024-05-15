@@ -6,11 +6,11 @@
 ## Índices
 - [Funcionalidades](#funcionalidades)
 - [Layout](#layout)
-- <a href="#demonstracao">Demonstração</a>
-- <a href="#rodar">Como rodar o projeto</a>
-- <a href="#tecnologias">Tecnologias Utilizadas</a>
-- <a href="#autoras">Pessoas Autoras</a>
-- <a href="#passos">Próximos Passos</a>
+- [Demonstração](#demonstração)
+- [Como rodar o projeto](#rodar)
+- [Tecnologias Utilizadas](#tecnologias)
+- [Pessoas Autoras](#autoras)
+- [Próximos Passos](#passos)
 
 ## Funcionalidades
 - Busca com filtro de hotéis; 
