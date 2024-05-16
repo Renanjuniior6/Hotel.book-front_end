@@ -90,6 +90,7 @@ $ yarn dev
 
 ## ❗ Observações 
 - Como se trata de um projeto fullstack, para rodar corretamente na sua máquina será necessário fazer o clone e rodar a parte back end
+- [Repositório da API](https://github.com/Renanjuniior6/Hotel.book-back_end)
 
 ## ▶ Próximos passos
 - Resposividade
