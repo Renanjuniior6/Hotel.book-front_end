@@ -31,6 +31,10 @@ export const Paragraph = styled.div`
     margin-bottom: 0.312rem;
     font-size: 1.125rem;
   }
+
+  b {
+    color: ${(props) => (props.isOffer ? "red" : "#000")};
+  }
 `
 
 export const BoxDown = styled.div`

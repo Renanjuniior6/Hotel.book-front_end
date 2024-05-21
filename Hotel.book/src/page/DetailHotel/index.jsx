@@ -13,7 +13,7 @@ import React, { useEffect, useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 
-import { Button, Calendario, Header } from "../../components"
+import { Button, Calendario, Header, OfferSlider } from "../../components"
 import { useFavorite } from "../../hooks/FavoriteContext"
 import api from "../../services/api"
 import { formatCurrency } from "../../utils/formatCurrency"
@@ -195,6 +195,7 @@ export function DetailHotel() {
                 </TotalValue>
               </RightBox>
             </Content2>
+            <OfferSlider />
           </>
         ))}
     </Container>

@@ -1,21 +1,27 @@
 import { HeartStraight, MapPin } from "@phosphor-icons/react"
 import PropTypes from "prop-types"
 import React, { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useLocation } from "react-router-dom"
 
 import { useFavorite } from "../../hooks/FavoriteContext"
 import { formatCurrency } from "../../utils/formatCurrency"
+import { Discount } from "./Discount"
 import { Container, BoxUp, BoxDown, Paragraph, Info } from "./styles"
 
-export function CardHotels({ hotel }) {
+export function CardHotels({ hotel, offer }) {
   const { putInFavorites } = useFavorite()
 
   const navigate = useNavigate()
   const [value, setValue] = useState()
 
+  const { pathname } = useLocation()
+
   function getId(id) {
-    if (hotel) {
+    if (pathname === "/hotels") {
       navigate(`/detailhotel/${id}`)
+    } else {
+      navigate(`/detailhotel/${id}`)
+      location.reload()
     }
   }
 
@@ -47,9 +53,10 @@ export function CardHotels({ hotel }) {
 
   return (
     <Container>
+      {hotel.offer === true && <Discount />}
       <img src={hotel.url} onClick={() => getId(hotel.id)} />
       <BoxUp>
-        <Paragraph>
+        <Paragraph isOffer={offer}>
           <p>{hotel.name}</p>
           <b>{formatCurrency(hotel.price)}</b>
         </Paragraph>
@@ -87,4 +94,5 @@ export function CardHotels({ hotel }) {
 
 CardHotels.propTypes = {
   hotel: PropTypes.object,
+  offer: PropTypes.bool,
 }
