@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { Navigation } from "swiper/modules"
+import { Pagination } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
 
 import "swiper/css"
@@ -35,7 +35,6 @@ export function OfferSlider() {
           clickable: true,
         }}
         navigation={true}
-        modules={[Navigation]}
         className="mySwiper"
       >
         {offer &&

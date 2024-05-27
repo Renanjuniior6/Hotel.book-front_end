@@ -8,6 +8,7 @@ import {
   PawPrint,
   Couch,
   Subway,
+  Building,
 } from "@phosphor-icons/react"
 import React, { useEffect, useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
@@ -108,7 +109,17 @@ export function DetailHotel() {
                   </p>
                 </Info>
                 <Total>
-                  <h3>Aluguel: {formatCurrency(item.price)}</h3>
+                  <h3>
+                    Aluguel:{" "}
+                    {item.offer
+                      ? formatCurrency(item.offerPrice)
+                      : formatCurrency(item.price)}
+                  </h3>
+                  {item.offer ? (
+                    <h4>Aluguel: {formatCurrency(item.price)}</h4>
+                  ) : (
+                    ""
+                  )}
                 </Total>
               </DetailsGroup>
               <ImageBox>
@@ -145,10 +156,12 @@ export function DetailHotel() {
                     </span>
                     <span>
                       <Bathtub size={32} />{" "}
-                      {item.bathroom ? "Banheiro" : "Sem banheiro"}
+                      {item.bathroom && item.bathroom > 1
+                        ? `${item.bathroom} Banheiros`
+                        : `${item.bathroom} Banheiro`}
                     </span>
                     <span>
-                      <Car size={32} /> {item.garage ? "Garagem" : "-"}
+                      <Car size={32} /> {item.garage ? "Garagem" : "Não possui"}
                     </span>
                     <span>
                       <PawPrint size={32} />{" "}
@@ -159,8 +172,12 @@ export function DetailHotel() {
                       {item.furniture ? "Mobiliado" : "Não mobiliado"}{" "}
                     </span>
                     <span>
-                      <Subway size={32} />{" "}
-                      {item.nearMetro ? "Metro próx." : "-"}
+                      <Subway size={32} />
+                      {item.nearMetro ? "Metro próx." : "Não possui"}
+                    </span>
+                    <span>
+                      <Building size={32} />{" "}
+                      {item.floor ? `Até ${item.floor}º andar` : "Não possui"}
                     </span>
                   </IconsGroup>
                 </Group>

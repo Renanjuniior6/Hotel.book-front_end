@@ -59,6 +59,11 @@ export const Total = styled.div`
   h3 {
     font-size: 1.5625rem;
   }
+
+  h4 {
+    color: gray;
+    text-decoration: line-through;
+  }
 `
 export const Content2 = styled.div`
   display: flex;
