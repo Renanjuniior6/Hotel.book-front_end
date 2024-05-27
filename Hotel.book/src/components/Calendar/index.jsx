@@ -1,19 +1,26 @@
 import React, { useState } from "react"
 import Calendar from "react-calendar"
-import "./style.css"
+import "react-calendar/dist/Calendar.css"
+import "./styles.css"
 
 export function Calendario() {
   const [date, setDate] = useState()
 
   return (
     <div className="app">
-      <h1 className="text-center">Escolha uma data</h1>
-      <div className="calendar-container">
+      <h2>Escolha uma data</h2>
+      <div>
         <Calendar onChange={setDate} value={date} />
       </div>
       <div className="text-center">
-        <span className="bold">Data selecionada: </span>
-        {date ? date.toDateString() : "Nenhuma data selecionada"}
+        <span>Data selecionada: </span>
+        {date
+          ? date.toLocaleDateString("pt-BR", {
+              year: "numeric",
+              month: "short",
+              day: "2-digit",
+            })
+          : "Nenhuma data"}
       </div>
     </div>
   )
