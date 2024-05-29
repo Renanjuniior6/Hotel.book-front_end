@@ -46,6 +46,17 @@ export const ImageBox = styled.div`
     }
   }
 `
+
+export const StarBox = styled.div`
+  position: absolute;
+  top: 19%;
+  right: 1.25rem;
+
+  .Star {
+    color: yellow;
+  }
+`
+
 export const Info = styled.div`
   h1 {
     font-size: 3.125rem;
@@ -89,7 +100,7 @@ export const RightBox = styled.div`
     grid-template-areas:
       "rent rent-price"
       "serviceTax serviceTax-price"
-      "fireEnsurance fireEnsurance-price";
+      "additional additional-price";
 
     .rent {
       grid-area: rent;
@@ -109,12 +120,12 @@ export const RightBox = styled.div`
       margin-left: 1.75rem;
     }
 
-    .fireEnsurance {
-      grid-area: fireEnsurance;
+    .additional {
+      grid-area: additional;
     }
 
-    .fireEnsurance-price {
-      grid-area: fireEnsurance-price;
+    .additional-price {
+      grid-area: additional-price;
       margin-left: 1.75rem;
     }
   }
@@ -127,7 +138,7 @@ export const Group = styled.div`
 
 export const Map = styled.div`
   background-image: url(${cityBackground});
-  width: 37.5rem;
+  width: 100%;
   height: 10rem;
   padding: 2.5rem;
 
@@ -149,16 +160,15 @@ export const Map = styled.div`
 export const IconsGroup = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  width: 37.5rem;
+  width: 45rem;
   height: 11.25rem;
   padding: 1.5625rem;
   gap: 1.25rem;
 
   span {
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 1.25rem;
+    gap: 0.625rem;
   }
 `
 

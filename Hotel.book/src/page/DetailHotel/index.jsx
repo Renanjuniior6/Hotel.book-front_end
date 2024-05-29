@@ -6,9 +6,10 @@ import {
   Bathtub,
   Car,
   PawPrint,
-  Couch,
-  Subway,
+  ForkKnife,
+  SwimmingPool,
   Building,
+  Star,
 } from "@phosphor-icons/react"
 import React, { useEffect, useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
@@ -32,6 +33,7 @@ import {
   Map,
   IconsGroup,
   TotalValue,
+  StarBox,
 } from "./styles"
 
 export function DetailHotel() {
@@ -131,8 +133,56 @@ export function DetailHotel() {
                 >
                   <HeartStraight className="Heart" size={32} weight={value} />
                 </div>
-                <img src={item.url} />
+                <img src={item.url} alt="imagem-do-hotel" />
               </ImageBox>
+              <StarBox>
+                <Star
+                  className="Star"
+                  size={32}
+                  weight={item.stars === 0 ? "regular" : "fill"}
+                />
+                <Star
+                  className="Star"
+                  size={32}
+                  weight={
+                    item.stars === 0 || item.stars === 1 ? "regular" : "fill"
+                  }
+                />
+                <Star
+                  className="Star"
+                  size={32}
+                  weight={
+                    item.stars === 0 || item.stars === 1 || item.stars === 2
+                      ? "regular"
+                      : "fill"
+                  }
+                />
+                <Star
+                  className="Star"
+                  size={32}
+                  weight={
+                    item.stars === 0 ||
+                    item.stars === 1 ||
+                    item.stars === 2 ||
+                    item.stars === 3
+                      ? "regular"
+                      : "fill"
+                  }
+                />
+                <Star
+                  className="Star"
+                  size={32}
+                  weight={
+                    item.stars === 0 ||
+                    item.stars === 1 ||
+                    item.stars === 2 ||
+                    item.stars === 3 ||
+                    item.stars === 4
+                      ? "regular"
+                      : "fill"
+                  }
+                />
+              </StarBox>
             </Content>
             <Content2>
               <LeftBox>
@@ -161,19 +211,20 @@ export function DetailHotel() {
                         : `${item.bathroom} Banheiro`}
                     </span>
                     <span>
-                      <Car size={32} /> {item.garage ? "Garagem" : "Não possui"}
+                      <Car size={32} />{" "}
+                      {item.garage ? "Estacionamento" : "Não possui"}
                     </span>
                     <span>
                       <PawPrint size={32} />{" "}
-                      {item.pets ? "Aceita" : "Não aceita"}
+                      {item.pets ? "Aceita pets" : "Não aceita"}
                     </span>
                     <span>
-                      <Couch size={32} />{" "}
-                      {item.furniture ? "Mobiliado" : "Não mobiliado"}{" "}
+                      <ForkKnife size={32} />{" "}
+                      {item.restaurant ? "Restaurante" : "Não possui"}{" "}
                     </span>
                     <span>
-                      <Subway size={32} />
-                      {item.nearMetro ? "Metro próx." : "Não possui"}
+                      <SwimmingPool size={32} />
+                      {item.pool ? "Piscina" : "Não possui"}
                     </span>
                     <span>
                       <Building size={32} />{" "}
@@ -191,9 +242,9 @@ export function DetailHotel() {
                   <p className="serviceTax-price">
                     {formatCurrency(item.serviceTax)}
                   </p>
-                  <p className="fireEnsurance">Seguro Incêndio: </p>
-                  <p className="fireEnsurance-price">
-                    {formatCurrency(item.fireEnsurance)}
+                  <p className="additional">Adicionais: </p>
+                  <p className="additional-price">
+                    {formatCurrency(item.additional)}
                   </p>
                 </div>
                 <TotalValue>
@@ -202,7 +253,7 @@ export function DetailHotel() {
                     <h3>Total:</h3>
                     <p>
                       {formatCurrency(
-                        item.price + item.serviceTax + item.fireEnsurance,
+                        item.price + item.serviceTax + item.additional,
                       )}
                     </p>
                   </div>

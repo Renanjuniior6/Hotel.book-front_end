@@ -9,4 +9,5 @@ export const Container = styled.div`
   padding: 0.3125rem;
   text-align: center;
   font-size: 0.875rem;
+  z-index: 9999;
 `
