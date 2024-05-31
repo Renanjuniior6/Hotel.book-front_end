@@ -1,4 +1,4 @@
 [[redirects]]
-from = "/*"
+from = "./Hotel.book"
 to = "/index.html"
 status = 200
