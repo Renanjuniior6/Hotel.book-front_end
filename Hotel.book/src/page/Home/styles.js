@@ -113,7 +113,7 @@ export const BoxPetsImg = styled.div`
     }
 
     button {
-      width: 80%;
+      width: 90%;
     }
   }
 `
@@ -134,9 +134,9 @@ export const BoxImage = styled.div`
 
   div {
     background-color: #fff;
-    width: 25rem;
-    height: 15.625rem;
-    padding: 1.25rem;
+    width: 100%;
+    margin: auto;
+    padding: 0.625rem;
 
     h1 {
       font-size: 2.1875rem;
@@ -147,20 +147,6 @@ export const BoxImage = styled.div`
     p {
       margin-bottom: 1.875rem;
       font-size: 1.1rem;
-    }
-
-    button {
-      height: 3.125rem;
-      background: transparent;
-      color: #000;
-      border: none;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-
-      &:hover {
-        color: #3957bd;
-      }
     }
   }
 `
