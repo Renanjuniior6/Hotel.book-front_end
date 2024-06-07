@@ -1,6 +1,7 @@
 .app {
   border-radius:  0.3125rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: #fff;
   padding: 0 20px 0 20px;
 
   h2 {

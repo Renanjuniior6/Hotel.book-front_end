@@ -14,4 +14,8 @@ export default createGlobalStyle`
 html {
     scroll-behavior: smooth;
   }
+
+  body { 
+    background-color: #fff;
+  }
 `

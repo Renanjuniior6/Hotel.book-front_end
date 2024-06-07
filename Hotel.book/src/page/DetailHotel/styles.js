@@ -83,6 +83,7 @@ export const Content2 = styled.div`
 `
 export const LeftBox = styled.div`
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: #fff;
 `
 
 export const RightBox = styled.div`
@@ -93,6 +94,7 @@ export const RightBox = styled.div`
   flex-direction: column;
   justify-content: space-between;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: #fff;
 
   .container {
     display: grid;
