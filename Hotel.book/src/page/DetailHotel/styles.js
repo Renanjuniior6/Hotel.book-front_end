@@ -84,10 +84,10 @@ export const Content2 = styled.div`
 export const LeftBox = styled.div`
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   background-color: #fff;
+  width: 48%;
 `
 
 export const RightBox = styled.div`
-  width: 18.75rem;
   height: 21.875rem;
   padding: 1.25rem;
   display: flex;
@@ -162,7 +162,6 @@ export const Map = styled.div`
 export const IconsGroup = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  width: 45rem;
   height: 11.25rem;
   padding: 1.5625rem;
   gap: 1.25rem;

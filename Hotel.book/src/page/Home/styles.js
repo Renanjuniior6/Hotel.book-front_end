@@ -20,20 +20,19 @@ export const SearchBox = styled.form`
   position: absolute;
   top: 13%;
   left: 10%;
-  height: 36.0625rem;
 `
 
 export const Title = styled.h1`
   text-align: center;
   width: 25rem;
-  margin-bottom: 10%;
+  margin-bottom: 2%;
+  font-size: 1.875rem;
 `
 
 export const Label = styled.label`
   border: solid 1px gray;
   width: 100%;
-  height: 5.625rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 5%;
   padding: 0.625rem;
   font-weight: 700;
 
@@ -62,7 +61,7 @@ export const Container2 = styled.div`
 
 export const BoxPets = styled.div`
   background-color: #d5bfd7;
-  width: 65%;
+  width: 70%;
   padding: 1.25rem 3.125rem;
   display: flex;
   h1 {
@@ -84,7 +83,7 @@ export const BoxPets = styled.div`
 
   img {
     margin-top: 6%;
-    width: 31.25rem;
+    width: 30rem;
     height: 31.25rem;
   }
 `
@@ -93,13 +92,13 @@ export const BoxPetsImg = styled.div`
   background-image: url(${PetImg});
   background-size: cover;
   background-position: center;
-  width: 35%;
-  padding: 1.875rem;
+  width: 30%;
+  padding: 0.625rem;
 
   div {
     background-color: #fff;
-    width: 25rem;
-    height: 15.625rem;
+    width: 90%;
+    margin: auto;
     padding: 1.25rem;
 
     h1 {
@@ -114,18 +113,7 @@ export const BoxPetsImg = styled.div`
     }
 
     button {
-      height: 3.125rem;
-      width: 70%;
-      background: transparent;
-      color: #000;
-      border: none;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-
-      &:hover {
-        color: #3957bd;
-      }
+      width: 80%;
     }
   }
 `
@@ -182,10 +170,9 @@ export const BoxBuyHotel = styled.div`
   width: 65%;
   padding: 1.25rem 3.125rem;
   display: flex;
-  gap: 5%;
 
   h1 {
-    width: 32.9375rem;
+    width: 30rem;
     font-size: 2.8125rem;
     margin-bottom: 2.5rem;
   }

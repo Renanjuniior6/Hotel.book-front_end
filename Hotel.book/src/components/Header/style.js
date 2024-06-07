@@ -67,7 +67,7 @@ export const ContainerRight = styled.div`
 `
 
 export const About = styled.div`
-  border-left: 0.1875rem solid #052659;
+  border-left: 0.125rem solid #052659;
   padding-left: 0.3125rem;
 
   a {
@@ -103,6 +103,7 @@ export const ProfileButton = styled.button`
   cursor: pointer;
   font-size: 1.0625rem;
   padding: 0.625rem 0.9375rem;
+  border: 1px solid #000;
 
   &:hover {
     color: #fff;
