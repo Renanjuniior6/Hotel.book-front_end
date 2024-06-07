@@ -67,7 +67,7 @@ export const ContainerRight = styled.div`
 `
 
 export const About = styled.div`
-  border-left: 0.125rem solid #052659;
+  border-left: 1px solid #000;
   padding-left: 0.3125rem;
 
   a {
@@ -77,8 +77,8 @@ export const About = styled.div`
 `
 
 export const Border = styled.div`
-  border-right: 0.1875rem solid #052659;
-  border-left: 0.1875rem solid #052659;
+  border-right: 1px solid #000;
+  border-left: 1px solid #000;
 `
 
 export const Group = styled.div`
