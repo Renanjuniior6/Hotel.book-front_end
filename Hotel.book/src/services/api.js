@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const apiHotelBook = axios.create({
-  baseURL: "https://hotelbook-backend-production.up.railway.app",
+  baseURL: "https://hotelbook-backend-production.up.railway.app/",
   // baseURL: "http://localhost:3001",
 })
 
