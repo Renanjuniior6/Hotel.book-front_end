@@ -14,8 +14,7 @@ export function Footer() {
       </Text>
       <hr />
       <Rights>
-        Copyrights © 2024 Desenvolvido por <b>Renan Junior</b> e{" "}
-        <b>Pedro Rafael</b>
+        Copyrights © 2024 Desenvolvido por <b>Renan Junior</b>
       </Rights>
     </Container>
   )
