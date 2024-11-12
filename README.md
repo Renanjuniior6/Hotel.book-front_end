@@ -58,6 +58,7 @@
 ![Captura tela de login Hotel book](https://github.com/Renanjuniior6/Hotel.book-front_end/assets/106713211/22d6fbae-dea7-4ebb-a965-31b5352314f1)
 
 ## 📲 [Link demonstração](https://hotel-book-front-end.vercel.app/)
+## 📲 [Vídeo demonstração](https://www.linkedin.com/feed/update/urn:li:activity:7194330459592413185/)
 
 ## ❓ Como rodar o projeto
 ```bash
@@ -91,6 +92,7 @@ $ yarn dev
 ## ❗ Observações 
 - Como se trata de um projeto fullstack, para rodar corretamente na sua máquina será necessário fazer o clone e rodar a parte back end
 - [Repositório da API](https://github.com/Renanjuniior6/Hotel.book-back_end)
+- Banco de dados fora do ar no momento!
 
 ## ▶ Próximos passos
 - Resposividade
