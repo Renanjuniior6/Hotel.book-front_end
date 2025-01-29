@@ -99,4 +99,5 @@ $ yarn dev
 - Melhorar CSS de Calendar
 - Hotéis em oferta
 - Agendamento com o WhatsApp
+- Tela de Pagamento
 - Software de retaguarda
